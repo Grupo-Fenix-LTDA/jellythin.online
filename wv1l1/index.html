@@ -1,0 +1,5341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Tracking (jelly-secret) -->
+    <script type="text/javascript" src="https://lp.jellythin.online/track.js?rtkcmpid=6a248a3503f59d73c4f29805"></script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5XTGKDRM');</script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <script src="https://fenix-tracker.malu-precioso.workers.dev/tracker.js" async></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JellyThin &mdash; Official Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+/* ===== css/variables.css ===== */
+/* ==========================================================================
+   JellyThin Design System - CSS Custom Properties
+   Palette: red primary #AD182B · rose #CC2B4D · light pink #FFE4DF
+            mauve #BB528C · white #FFFFFF · dark text #1A1A1A
+   ========================================================================== */
+
+:root {
+  /* ---- Core Brand Palette (JellyThin) ---- */
+  --color-page: #FFFFFF;              /* page background */
+  --color-cream: #FFE4DF;             /* alt section background (light pink) */
+  --color-water-green: #FFE4DF;       /* light background (light pink) */
+  --color-dark-teal: #AD182B;         /* dark section background (red primary) */
+  --color-text: #1A1A1A;              /* body text (dark) */
+  --color-text-alt: #1A1A1A;          /* body text 2 */
+  --color-accent: #BB528C;            /* mauve accent */
+  --color-accent-2: #CC2B4D;          /* rose secondary */
+  --color-cta: #AD182B;               /* primary CTA (red primary) */
+  --color-cta-hover: #CC2B4D;         /* CTA hover (rose) */
+  --color-pure-white: #FFFFFF;
+  --color-off-white: #FFE4DF;
+  --color-muted: #C5CBD5;
+
+  /* ---- Legacy tokens (mapped to new palette so existing rules don't break) ---- */
+  --color-deep-indigo: var(--color-text);
+  --color-royal-purple: var(--color-accent);
+  --color-soft-lavender: var(--color-water-green);
+  --color-pearl-silver: var(--color-muted);
+
+  /* ---- Gradients ---- */
+  --gradient-hero: linear-gradient(135deg, #AD182B 0%, #CC2B4D 100%);
+  --gradient-highlight: linear-gradient(to right, #BB528C, #CC2B4D);
+  --gradient-cta: linear-gradient(135deg, #CC2B4D, #AD182B);
+
+  /* ---- Typography ---- */
+  --font-family: "Inter", sans-serif;
+
+  /* ---- Layout ---- */
+  --container-width: 1170px;
+  --section-padding: 60px 0;
+
+  /* ---- Buttons ---- */
+  --btn-bg: var(--color-cta);
+  --btn-text: var(--color-pure-white);
+  --btn-radius: 6px;
+
+  /* ---- Spacing Tokens ---- */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-30: 30px;
+  --space-40: 40px;
+  --space-50: 50px;
+  --space-60: 60px;
+  --space-80: 80px;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-text);
+}
+
+
+/* ===== css/base.css ===== */
+/* ==========================================================================
+   JoinTrix - Base Reset, Typography & Utilities
+   ========================================================================== */
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---- Body ---- */
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* ---- Container ---- */
+.container {
+  width: var(--container-width);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* ---- Padding Utility ---- */
+.bdinpad {
+  padding: 0 68px;
+}
+
+/* ---- Overflow Utility ---- */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ---- Gradient Text Highlight ---- */
+.highlight {
+  background: var(--gradient-highlight);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Hide/Show Utilities ---- */
+.show-1030,
+.show-767,
+.show-479 {
+  display: none;
+}
+
+.hide-1030,
+.hide-767,
+.hide-479 {
+  /* default visible - actual display value set by each element's own CSS */
+}
+
+
+/* ===== css/components.css ===== */
+/* ==========================================================================
+   JoinTrix - Reusable Component Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   HEADER / NAVIGATION
+   ========================================================================== */
+
+.header {
+  padding: 13px 0;
+  background: var(--color-pure-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-muted);
+  transition: box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 2px 12px rgba(26, 26, 26, 0.08);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #AD182B;
+  font-weight: 800;
+  font-size: 28px;
+  text-decoration: none;
+  line-height: 40px;
+  flex-shrink: 0;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: #BB528C;
+}
+
+ul.menu {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+}
+
+ul.menu li {
+  display: inline-block;
+  padding: 0 17px;
+  font-size: 18px;
+  line-height: 40px;
+  color: var(--color-deep-indigo);
+  position: relative;
+}
+
+ul.menu li a {
+  color: var(--color-deep-indigo);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+ul.menu li a:hover {
+  color: var(--color-royal-purple);
+}
+
+ul.menu li::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: var(--color-pearl-silver);
+}
+
+ul.menu li:nth-last-child(2)::after,
+ul.menu li:last-child::after {
+  display: none;
+}
+
+ul.menu li:last-child {
+  padding: 0;
+  margin-left: 8px;
+}
+
+ul.menu li:last-child a {
+  display: inline-block;
+  background: var(--color-cta);
+  color: var(--color-pure-white);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 22px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background 0.3s;
+  box-shadow: none;
+  line-height: 24px;
+}
+
+ul.menu li:last-child a:hover {
+  background: var(--color-cta-hover);
+  color: var(--color-pure-white);
+}
+
+/* Hamburger Menu Toggle */
+#menu-wrapper {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+#hamburger-menu {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+#hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--color-text);
+  border-radius: 3px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+#hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+
+#hamburger-menu span:nth-child(2) {
+  top: 10px;
+}
+
+#hamburger-menu span:nth-child(3) {
+  top: 20px;
+}
+
+#hamburger-menu.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+
+#hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-menu.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+#menu-container {
+  position: static;
+}
+
+#menu-container .menu-list {
+  position: absolute;
+  left: -100%;
+  top: 100%;
+  width: 100%;
+  background: var(--color-dark-teal);
+  z-index: 999;
+  transition: left 0.3s ease;
+  padding: 10px 0;
+}
+
+.menu-list.active {
+  left: 0;
+}
+
+.menu-list li {
+  display: block;
+  padding: 0;
+}
+
+.menu-list li a {
+  display: block;
+  color: var(--color-pure-white);
+  font-size: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.menu-list li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-block;
+  background: var(--color-cta);
+  color: var(--color-pure-white);
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: var(--btn-radius);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  box-shadow: 0 5px 0 #7d1020;
+  font-family: var(--font-family);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--color-cta-hover);
+  box-shadow: 0 5px 0 #7d1020, 0 8px 24px rgba(173, 24, 43, 0.3);
+  transform: scale(1.045);
+}
+
+.btn-primary:active {
+  box-shadow: 0 2px 0 #7d1020;
+  transform: translateY(3px);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-lg {
+  padding: 18px 50px;
+  font-size: 22px;
+}
+
+/* ==========================================================================
+   PRICING CARDS
+   ========================================================================== */
+
+.pricing-card {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(90, 138, 140, 0.22);
+  border-color: var(--color-accent);
+}
+
+.pricing-card.float-effect {
+  animation: bottleFloat 4s ease-in-out infinite;
+}
+
+@keyframes bottleFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.pricing-card:hover .pricing-img {
+  transform: scale(1.04);
+}
+
+.pricing-img {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pricing-card.featured {
+  border: 3px solid var(--color-cta);
+  border-radius: 16px;
+  z-index: 2;
+  box-shadow:
+    0 10px 40px rgba(26, 26, 26, 0.22),
+    0 0 0 4px rgba(173, 24, 43, 0.22);
+  animation: featuredPulse 2.2s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+@keyframes featuredPulse {
+  0%, 100% {
+    box-shadow:
+      0 10px 40px rgba(26, 26, 26, 0.22),
+      0 0 0 4px rgba(173, 24, 43, 0.22);
+  }
+  50% {
+    box-shadow:
+      0 12px 50px rgba(26, 26, 26, 0.28),
+      0 0 0 8px rgba(173, 24, 43, 0.35),
+      0 0 30px rgba(173, 24, 43, 0.25);
+  }
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 50px rgba(173, 24, 43, 0.28),
+    0 0 0 6px rgba(173, 24, 43, 0.38),
+    0 0 30px rgba(173, 24, 43, 0.25);
+  border-color: var(--color-cta-hover);
+  animation: none;
+}
+
+.pricing-card-label {
+  background: #BB528C;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.pricing-card-label.bundle-label {
+  background: #AD182B;
+  color: #fff;
+}
+
+.pricing-card-label.featured-label {
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 14px;
+  padding: 14px 0;
+  letter-spacing: 2px;
+}
+
+.pricing-card-inner {
+  padding: 24px 22px 25px;
+  text-align: center;
+}
+
+.pricing-qty {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.pricing-qty.featured-qty {
+  color: var(--color-text);
+  font-size: 32px;
+}
+
+.pricing-supply {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.pricing-img {
+  max-width: 100%;
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin: 15px auto;
+  display: block;
+}
+
+.pricing-card.featured .pricing-img {
+  height: 160px;
+}
+
+.pricing-price {
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.price-dollar {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.price-big {
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.price-per {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  line-height: 1.3;
+  align-self: center;
+  font-weight: 500;
+}
+
+.pricing-subscribe {
+  margin: 8px 0 12px;
+  text-align: center;
+  padding: 6px 0 4px;
+}
+
+.pricing-subscribe .subscribe-or {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 4px;
+}
+
+.subscribe-price-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  line-height: 1;
+}
+
+.subscribe-dollar {
+  font-size: 28px;
+  font-weight: 800;
+  color: #AD182B;
+  line-height: 1.3;
+}
+
+.pricing-subscribe .subscribe-price {
+  font-size: 72px;
+  font-weight: 900;
+  color: #AD182B;
+  line-height: 1;
+}
+
+.subscribe-per {
+  font-size: 13px;
+  color: #AD182B;
+  text-align: left;
+  line-height: 1.3;
+  align-self: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Two purchase options block (one-time vs subscribe) */
+.pricing-buy-options {
+  margin: 14px 0 10px;
+}
+
+.pricing-buy-options-title {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-cta);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+
+.pricing-buy-option {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.pricing-buy-option-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.pricing-buy-option-label--save {
+  color: #AD182B;
+}
+
+.pricing-buy-divider {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.pricing-buy-divider::before,
+.pricing-buy-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.pricing-buy-divider span {
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-savings {
+  color: #AD182B;
+  font-weight: 800;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.pricing-checks {
+  margin: 16px auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  border-top: 1px solid #eee;
+}
+
+.pricing-checks li {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #333;
+  padding: 10px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+}
+
+.pricing-checks li:nth-child(2),
+.pricing-checks li:nth-child(3),
+.pricing-checks li:nth-child(4),
+.pricing-checks li:nth-child(5) {
+  background: none;
+}
+
+svg.check-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: var(--color-accent-2);
+}
+
+.check-disabled {
+  color: #aaa;
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.x-icon {
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  display: inline;
+  color: #AD182B;
+}
+
+/* Pricing card CTA buttons — teal for 1 & 3 bottles */
+.pricing-card .btn-primary {
+  background: linear-gradient(135deg, #AD182B, #CC2B4D);
+  color: #fff;
+  box-shadow: 0 5px 0 #BB528C;
+  border-radius: 8px;
+}
+
+.pricing-card .btn-primary:hover {
+  background: linear-gradient(135deg, #d30275, #BB528C);
+  box-shadow: 0 5px 0 #AD182B, 0 8px 24px rgba(90, 138, 140, 0.35);
+  color: #fff;
+}
+
+.pricing-card .btn-primary:active {
+  box-shadow: 0 2px 0 #AD182B;
+}
+
+/* Featured card CTA — red gradient for 6 bottles */
+.pricing-card.featured .btn-primary {
+  background: linear-gradient(135deg, #CC2B4D, #AD182B);
+  color: #fff;
+  box-shadow: 0 5px 0 #7d1020;
+}
+
+.pricing-card.featured .btn-primary:hover {
+  background: linear-gradient(135deg, #D33758, #BF1F35);
+  box-shadow: 0 5px 0 #7d1020, 0 8px 24px rgba(173, 24, 43, 0.35);
+  color: #fff;
+}
+
+.pricing-card.featured .btn-primary:active {
+  box-shadow: 0 2px 0 #7d1020;
+}
+
+.pricing-btn-wrapper {
+  position: relative;
+  margin-top: 5px;
+}
+
+.pricing-card .btn-primary ~ .btn-primary,
+.pricing-card .buy-link ~ .buy-link,
+.pricing-btn-wrapper .btn-primary ~ .btn-primary {
+  margin-top: 0 !important;
+  background: linear-gradient(135deg, #FFE066 0%, #FFC107 50%, #D4A017 100%) !important;
+  color: #3a2800 !important;
+  box-shadow: 0 5px 0 #A07800 !important;
+}
+
+.pricing-card .btn-primary ~ .btn-primary:hover,
+.pricing-card .buy-link ~ .buy-link:hover,
+.pricing-btn-wrapper .btn-primary ~ .btn-primary:hover {
+  background: linear-gradient(135deg, #FFD93D 0%, #E6A800 50%, #B8860B 100%) !important;
+  box-shadow: 0 5px 0 #A07800, 0 8px 24px rgba(212, 160, 23, 0.35) !important;
+  color: #3a2800 !important;
+}
+
+.pricing-card .btn-primary ~ .btn-primary:active,
+.pricing-card .buy-link ~ .buy-link:active,
+.pricing-btn-wrapper .btn-primary ~ .btn-primary:active {
+  box-shadow: 0 2px 0 #A07800 !important;
+}
+
+.btn-featured {
+  font-size: 20px;
+  padding: 18px 20px;
+}
+
+/* Cursor lives inside .pricing-buy-option (which becomes the positioning root) */
+.pricing-buy-option {
+  position: relative;
+}
+
+.pricing-buy-option:has(> .cursor-click-anim) {
+  padding-bottom: 42px;
+}
+
+.cursor-click-anim {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  margin-left: -16px;
+  pointer-events: none;
+  animation: cursorClick 1.6s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes cursorClick {
+  0%, 100% { transform: rotate(45deg) translate(0, 0) scale(1); }
+  40%      { transform: rotate(45deg) translate(0, -8px) scale(1.08); }
+  50%      { transform: rotate(45deg) translate(0, -4px) scale(0.92); }
+  60%      { transform: rotate(45deg) translate(0, -8px) scale(1.08); }
+}
+
+/* Product image + bonus ebooks — product-shot composition */
+.pricing-img-combo {
+  position: relative;
+  margin: 15px auto 0;
+  width: 100%;
+  min-height: 180px;
+}
+
+.pricing-img-combo .pricing-img {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  height: 170px;
+}
+
+.combo-ebooks {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.combo-ebooks-row {
+  display: flex;
+  gap: 0;
+}
+
+.combo-ebooks-row img:last-child {
+  margin-left: -8px;
+}
+
+.combo-ebooks img {
+  display: block;
+  height: 55px;
+  width: auto;
+}
+
+.combo-badge {
+  display: inline-block;
+  margin-top: -6px;
+  padding: 3px 12px;
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(173, 24, 43, 0.35);
+}
+
+.pricing-cards-img {
+  display: block;
+  max-width: 170px;
+  height: auto;
+  margin: 12px auto 0;
+}
+
+.pricing-bottom {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.pricing-bottom-retail {
+  font-size: 16px;
+  color: #999;
+}
+
+.pricing-bottom-total {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.pricing-bottom-shipping {
+  font-size: 13px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #AD182B;
+}
+
+/* ==========================================================================
+   TRUST ICONS
+   ========================================================================== */
+
+.trust-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.trust-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ==========================================================================
+   TESTIMONIAL CARDS
+   ========================================================================== */
+
+.testimonial-card {
+  background: var(--color-pure-white);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-stars {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-deep-indigo);
+}
+
+.testimonial-verified {
+  color: #11b142;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* ==========================================================================
+   FAQ ACCORDION
+   ========================================================================== */
+
+.faq-item {
+  border: 2px solid var(--color-pearl-silver);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 50px 18px 20px;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  background: var(--color-off-white);
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  color: var(--color-deep-indigo);
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #ececf0;
+}
+
+.faq-toggle {
+  font-size: 24px;
+  font-weight: 400;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-question.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.faq-answer p {
+  padding: 0 20px 20px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #555;
+}
+
+/* ==========================================================================
+   GUARANTEE SEAL & BADGES
+   ========================================================================== */
+
+.guarantee-seal {
+  flex-shrink: 0;
+}
+
+.seal-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--color-royal-purple);
+  color: var(--color-pure-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.seal-days {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.seal-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.seal-sub {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.guarantee-badges {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.guarantee-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-deep-indigo);
+}
+
+/* ==========================================================================
+   CLAIM CTA STRIP
+   ========================================================================== */
+
+.claim-strip {
+  background: #CC2B4D;
+  padding: 35px 0 24px;
+  text-align: center;
+  color: var(--color-pure-white);
+}
+
+.claim-strip-heading {
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 50px;
+  color: var(--color-pure-white);
+}
+
+.claim-strip-sub {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-water-green);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   COUNTDOWN TIMER (SOP: below VSL headline, 20 min regressive)
+   ========================================================================== */
+
+.vsl-offer-headline {
+  color: #fff;
+  text-align: center;
+  padding: 20px 18px 16px;
+  margin: 28px auto 0;
+  max-width: 900px;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.18);
+}
+
+.vsl-offer-headline h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.4px;
+}
+
+.vsl-countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.vsl-countdown .stopwatch {
+  font-size: 26px;
+  font-family: "Inter", monospace;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.vsl-countdown .claim-act-text {
+  display: none;
+  color: var(--color-cta);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vsl-countdown-label {
+  font-size: 13px;
+  color: var(--color-water-green);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+/* VSL Delay: hidden until delay fires */
+.vsl-delayed {
+  display: none;
+}
+
+.vsl-delayed.revealed {
+  display: block;
+  animation: vslReveal 0.5s ease-out;
+}
+
+@keyframes vslReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+  background: #AD182B;
+  padding: 40px 0;
+  color: var(--color-pure-white);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 56px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--color-water-green);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--color-pure-white);
+}
+
+.footer-disclaimer,
+.footer-shellfish,
+.footer-bg {
+  text-align: left;
+  font-size: 12px;
+  color: var(--color-water-green);
+  line-height: 20px;
+  max-width: 100%;
+  margin: 0 auto 14px;
+}
+
+.footer-shellfish {
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--color-cta);
+  margin-bottom: 18px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer-disclaimer {
+  text-align: left;
+  font-size: 12px;
+  color: var(--color-pearl-silver);
+  line-height: 20px;
+  max-width: 100%;
+  margin: 0 auto 15px;
+}
+
+.footer-contact {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-pearl-silver);
+}
+
+.footer-contact a {
+  color: var(--color-soft-lavender);
+}
+
+/* ==========================================================================
+   BuyGoods disclaimer overflow fix
+   Desktop: keep BuyGoods default layout (200px logo + flex:1 1 500px text).
+   Mobile (<=768px): wrap the flex so it doesn't trigger horizontal scroll
+   on narrow viewports.
+   ========================================================================== */
+#disclaimer {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  #disclaimer,
+  #disclaimer * {
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+  #disclaimer > div > div {
+    flex-wrap: wrap !important;
+  }
+  #disclaimer > div > div > div {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   PRICING CARD FLIP (front = Subscribe / gold, back = Normal one-time / red)
+   ========================================================================== */
+
+.pricing-flip-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  perspective: 1800px;
+  -webkit-perspective: 1800px;
+}
+
+/* "One-Time Offer / View Special Offer" flip button (above each card) */
+.pricing-flip-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  margin: 0 auto;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 999px;
+  /* DEFAULT (before flip) = GOLD */
+  background: linear-gradient(135deg, #F2C744 0%, #D9A82E 100%);
+  color: #1A1A1A;
+  font-family: var(--font-family);
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(192, 144, 16, 0.42);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.35s ease,
+    color 0.35s ease;
+}
+
+.pricing-flip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(192, 144, 16, 0.52);
+}
+
+.pricing-flip-btn:active {
+  transform: translateY(0);
+}
+
+/* AFTER flip = RED */
+.pricing-flip-container.is-flipped .pricing-flip-btn {
+  background: linear-gradient(135deg, #CC2B4D 0%, #AD182B 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(173, 24, 43, 0.42);
+}
+
+.pricing-flip-container.is-flipped .pricing-flip-btn:hover {
+  box-shadow: 0 12px 26px rgba(173, 24, 43, 0.52);
+}
+
+/* Sweeping light beam */
+.pricing-flip-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-22deg);
+  animation: flipBtnShine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes flipBtnShine {
+  0% {
+    left: -150%;
+  }
+  55%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Keep label + icon above the beam */
+.pricing-flip-btn-icon,
+.pricing-flip-btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-flip-btn-icon {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.4s ease;
+}
+
+.pricing-flip-container.is-flipped .pricing-flip-btn-icon {
+  transform: rotate(-180deg);
+}
+
+/* Outside label above each card — bigger, black */
+.pricing-item-label {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  margin: 0 0 4px;
+}
+
+.pricing-flip-container--featured .pricing-item-label {
+  font-size: 34px;
+}
+
+/* Flipper (3D stack) */
+.pricing-card-flipper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.pricing-card-flipper > .pricing-card {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Back card (Normal one-time) starts rotated 180deg */
+.pricing-card-flipper > .pricing-card.pricing-card--normal {
+  transform: rotateY(180deg);
+}
+
+.pricing-card-flipper > .pricing-card.pricing-card--normal:hover {
+  transform: rotateY(180deg) translateY(-6px);
+}
+
+/* Only the currently visible face captures pointer events */
+.pricing-flip-container:not(.is-flipped)
+  .pricing-card-flipper > .pricing-card.pricing-card--normal {
+  pointer-events: none;
+}
+
+.pricing-flip-container.is-flipped
+  .pricing-card-flipper > .pricing-card.pricing-card--subscribe {
+  pointer-events: none;
+}
+
+.pricing-flip-container.is-flipped .pricing-card-flipper {
+  transform: rotateY(180deg);
+}
+
+/* --- SUBSCRIBE front card (gold / yellow accent) --- */
+.pricing-card.pricing-card--subscribe {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 213, 79, 0.55) 0%,
+    rgba(255, 232, 145, 0.30) 45%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border: 2px solid #F2C744;
+  box-shadow: 0 8px 24px rgba(242, 199, 68, 0.22);
+  animation: none;
+}
+
+.pricing-card.pricing-card--subscribe:hover {
+  border-color: #E0B431;
+  box-shadow: 0 14px 36px rgba(242, 199, 68, 0.35);
+}
+
+.pricing-card.pricing-card--subscribe-featured {
+  border: 3px solid #E0B431;
+  box-shadow:
+    0 10px 40px rgba(192, 144, 16, 0.25),
+    0 0 0 4px rgba(242, 199, 68, 0.30);
+  animation: subscribePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes subscribePulse {
+  0%, 100% {
+    box-shadow:
+      0 10px 40px rgba(192, 144, 16, 0.25),
+      0 0 0 4px rgba(242, 199, 68, 0.30);
+  }
+  50% {
+    box-shadow:
+      0 12px 50px rgba(192, 144, 16, 0.32),
+      0 0 0 8px rgba(242, 199, 68, 0.45),
+      0 0 30px rgba(242, 199, 68, 0.30);
+  }
+}
+
+.pricing-card.pricing-card--subscribe-featured:hover {
+  animation: none;
+  box-shadow:
+    0 20px 50px rgba(192, 144, 16, 0.32),
+    0 0 0 6px rgba(242, 199, 68, 0.50);
+}
+
+/* Gold label badge at top of subscribe card */
+.pricing-card-label.pricing-card-label--subscribe {
+  background: linear-gradient(to right, #F2C744, #E0B431);
+  color: #1A1A1A;
+  letter-spacing: 1.2px;
+}
+
+.pricing-card-label.pricing-card-label--subscribe-featured {
+  background: linear-gradient(to right, #F2C744, #D9A82E);
+  font-size: 15px;
+  padding: 14px 0;
+  letter-spacing: 1.8px;
+}
+
+/* Subscribe price block tweaks */
+.pricing-price.pricing-price--subscribe .price-per {
+  color: #8a6a14;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+/* "Subscribe & Save Monthly" option title — gold */
+.pricing-buy-options-title.pricing-buy-options-title--subscribe {
+  color: #8a6a14;
+}
+
+/* Gold subscribe button */
+.pricing-card .btn-primary.btn-subscribe-gold {
+  background: linear-gradient(135deg, #F2C744 0%, #D9A82E 100%);
+  color: #1A1A1A;
+  border: none;
+  text-shadow: none;
+  font-weight: 800;
+  box-shadow: 0 5px 0 #A07800;
+}
+
+.pricing-card .btn-primary.btn-subscribe-gold:hover {
+  background: linear-gradient(135deg, #E0B431 0%, #C49A1A 100%);
+  color: #1A1A1A;
+  box-shadow: 0 8px 18px rgba(192, 144, 16, 0.4);
+}
+
+.pricing-card .btn-primary.btn-subscribe-gold:active {
+  background: #C49A1A;
+}
+
+/* Normal one-time card (back face) — buy button also gold to match */
+.pricing-card.pricing-card--normal .btn-primary.buy-link {
+  background: linear-gradient(135deg, #F2C744 0%, #D9A82E 100%);
+  color: #1A1A1A;
+  border: none;
+  text-shadow: none;
+  font-weight: 800;
+  box-shadow: 0 5px 0 #A07800;
+}
+
+.pricing-card.pricing-card--normal .btn-primary.buy-link:hover {
+  background: linear-gradient(135deg, #E0B431 0%, #C49A1A 100%);
+  color: #1A1A1A;
+  box-shadow: 0 8px 18px rgba(192, 144, 16, 0.4);
+}
+
+.pricing-card.pricing-card--normal .btn-primary.buy-link:active {
+  background: #C49A1A;
+  box-shadow: 0 3px 0 #A07800;
+}
+
+/* BONUS divider — horizontal lines with "BONUS" centered */
+.pricing-bonus-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 12px;
+  color: #8a6a14;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pricing-bonus-divider::before,
+.pricing-bonus-divider::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+.pricing-bonus-divider span {
+  flex: 0 0 auto;
+}
+
+/* Normal-card variant of the BONUS divider — keep typography, change tint */
+.pricing-card--normal .pricing-bonus-divider {
+  color: #666;
+}
+
+/* Single-line bonus note (for 1 & 2 bottle) */
+.pricing-bonus-note {
+  font-size: 14px;
+  color: #444;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+/* 3-bottle bonus list (3 ebook thumbnails) */
+.pricing-bonus-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 4px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pricing-bonus-list li {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.pricing-bonus-list li img {
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* "FREE USA Shipping" bottom shipping (gold/free accent) */
+.pricing-bottom-shipping.pricing-bottom-shipping--free {
+  color: #8a6a14;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.pricing-card--normal .pricing-bottom-shipping.pricing-bottom-shipping--free {
+  color: var(--color-accent-2);
+}
+
+/* --- NORMAL (back) one-time card --- uses default .pricing-card / .featured */
+.pricing-card.pricing-card--normal {
+  /* Default red border/background already comes from .pricing-card */
+}
+
+/* --- Offer toggle (segmented Subscribe / One-Time switch above the card) --- */
+.offer-toggle {
+  position: relative;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 320px;
+  padding: 6px;
+  background: #EFE7D2;
+  border: 1px solid #E0D3AC;
+  border-radius: 999px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* The sliding highlight that sits behind the active option */
+.offer-toggle-slider {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: calc(50% - 6px);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #F2C744 0%, #E0B431 100%);
+  box-shadow: 0 4px 12px rgba(192, 144, 16, 0.45);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), background 0.4s ease;
+  z-index: 0;
+}
+
+.offer-toggle.show-normal .offer-toggle-slider {
+  transform: translateX(100%);
+  background: linear-gradient(135deg, #C81F36 0%, #AD182B 100%);
+  box-shadow: 0 4px 12px rgba(173, 24, 43, 0.45);
+}
+
+.offer-toggle-opt {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 10px;
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  color: #8A7B55;
+  border-radius: 999px;
+  transition: color 0.3s ease;
+}
+
+.offer-toggle-opt.is-active {
+  color: #1A1A1A;
+}
+
+.offer-toggle.show-normal .offer-toggle-opt[data-offer="normal"].is-active {
+  color: #fff;
+}
+
+
+/* ===== css/sections.css ===== */
+/* ==========================================================================
+   JoinTrix - Section-Specific Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+/* Hero Section — Dark teal/navy gradient background */
+.hero-section {
+  background: linear-gradient(135deg, #AD182B 0%, #BB528C 100%);
+  padding: 40px 0 60px 0;
+}
+
+.hero-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-heading h1 {
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 1.15;
+  color: #fff;
+}
+
+.hero-heading h1 span {
+  color: var(--color-water-green);
+}
+
+.hero-subheading {
+  font-size: 20px;
+  color: var(--color-water-green);
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 30px;
+}
+
+.hero-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  overflow: visible;
+}
+
+.hero-left .hero-product-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 460px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 18px 40px rgba(0, 0, 0, 0.35));
+}
+
+.hero-left .video-placeholder {
+  flex: 1;
+}
+
+.hero-right {
+  flex: 0 0 380px;
+  display: flex;
+}
+
+/* Video placeholder */
+.video-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-water-green);
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.video-placeholder:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Hero testimonials */
+.hero-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-testimonial-box {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 16px 18px;
+}
+
+.hero-testimonial-stars {
+  color: #e8c31e;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.hero-testimonial-box p {
+  color: var(--color-water-green);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0 0 6px;
+}
+
+.hero-testimonial-box span {
+  font-size: 13px;
+  color: #888;
+}
+
+.hero-testimonial-box strong {
+  color: #fff;
+}
+
+/* Hero mini testimonials (under product image, left column) */
+.hero-mini-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.hero-mini-testimonial {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.hero-mini-avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-cta), var(--color-accent-2));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.hero-mini-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-mini-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.hero-mini-stars {
+  color: #f5b50a;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.hero-mini-rating {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.hero-mini-quote {
+  font-size: 14px;
+  line-height: 1.45;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.hero-mini-author {
+  font-size: 12px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hero-mini-tag {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}
+
+/* Hero offer card */
+.hero-card {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: none;
+  outline: 2px solid rgba(255, 228, 223, 0.35);
+  outline-offset: 4px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+}
+
+.hero-card-header {
+  background: #CC2B4D;
+  padding: 14px 20px;
+  color: #fff;
+  font-weight: 900;
+  font-size: 22px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.hero-card-header p { margin: 0; }
+
+.hero-card-body {
+  padding: 20px 20px 18px;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-product-img {
+  max-width: 85%;
+  height: 160px;
+  object-fit: contain;
+  margin: 0 auto 14px;
+  display: block;
+}
+
+/* Bonuses section */
+.hero-card-bonuses {
+  margin: 0 0 14px;
+  padding: 12px 0 0;
+  border-top: 1px solid #eee;
+}
+
+.hero-card-bonuses-title {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.hero-card-bonuses-grid.three-up {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.hero-card-bonuses-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.hero-bonus {
+  position: relative;
+  border: 1px solid #eee;
+  padding: 10px 8px;
+  background: var(--color-cream);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-bonus-tag {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  text-transform: uppercase;
+}
+
+.hero-bonus img {
+  display: block;
+  flex: 0 0 auto;
+  max-width: 40px;
+  height: auto;
+}
+
+.hero-bonus-text { text-align: left; min-width: 0; }
+
+.hero-bonus-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-bonus-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  margin: 2px 0 0;
+}
+
+/* CTA and trust */
+.hero-card-trust {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+.hero-card-trust-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-card-trust-item span {
+  font-size: 11px;
+  line-height: 1.3;
+  color: #999;
+  text-align: center;
+  font-weight: 500;
+}
+
+.hc-offer-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.hc-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.hc-savings {
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+  background: var(--color-cta);
+  padding: 4px 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hc-bonuses {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.hc-bonus-item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: var(--color-cream);
+}
+
+.hc-bonus-item img {
+  width: 44px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.hc-bonus-free {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.hc-bonus-name {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.hc-cta {
+  display: block;
+  width: 100%;
+  padding: 16px 0;
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.hc-cta:hover {
+  background: var(--color-cta-hover);
+}
+
+.hc-trust {
+  margin: 14px 0 0;
+  font-size: 11px;
+  color: #999;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.hero-testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.hero-testimonial-box {
+  border: 1px solid rgba(194, 168, 226, 0.4);
+  border-radius: 10px;
+  padding: 16px 20px;
+  color: var(--color-pure-white);
+}
+
+.hero-testimonial-stars {
+  color: #ffc107;
+  font-size: 18px;
+  margin-bottom: 6px;
+  letter-spacing: 2px;
+}
+
+.hero-testimonial-box p {
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 8px;
+}
+
+.hero-testimonial-box span {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.hero-testimonial-box span strong {
+  opacity: 1;
+}
+
+/* ==========================================================================
+   PRICING SECTION
+   ========================================================================== */
+
+.pricing-section {
+  padding: 60px 0;
+  background: var(--color-cream);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-header h2 {
+  color: var(--color-text);
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.section-header p {
+  color: #888;
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+/* ==========================================================================
+   GUARANTEE SECTION
+   ========================================================================== */
+
+.guarantee-section {
+  background: var(--color-pure-white);
+  padding: 60px 0;
+}
+
+.guarantee-title {
+  text-align: center;
+  color: var(--color-text);
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.guarantee-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.guarantee-badge-img {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
+}
+
+.guarantee-copy {
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+  max-width: 700px;
+}
+
+.guarantee-copy strong {
+  color: var(--color-text);
+}
+
+.guarantee-fda-icons {
+  display: block;
+  margin: 35px auto 0;
+  max-width: 700px;
+  width: 100%;
+}
+
+.guarantee-mfg {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  margin-top: 25px;
+}
+
+.guarantee-mfg strong {
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   BONUSES SECTION
+   ========================================================================== */
+
+.bonuses-section {
+  padding: 80px 0 90px;
+  background: #AD182B;
+}
+
+.bonuses-section h2 {
+  text-align: center;
+  color: var(--color-pure-white);
+  margin-bottom: 44px;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.bonuses-section h2 .bonus-hl {
+  color: #ffd84a;
+}
+
+.bonuses-section h2 .bonus-hl-underline {
+  color: #ffd84a;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+}
+
+.bonuses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.bonus-card {
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.bonus-image {
+  position: relative;
+  width: 100%;
+  margin-bottom: 18px;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--color-cream);
+}
+
+.bonus-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+}
+
+.bonus-image .digital-download-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: rgba(30, 40, 50, 0.9);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.bonus-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--color-water-green);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.bonus-card h3 {
+  font-size: 26px;
+  margin-bottom: 12px;
+  color: var(--color-pure-white);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.bonus-price {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 16px;
+  color: var(--color-water-green);
+  font-weight: 600;
+}
+
+.bonus-price strong {
+  color: #ffd84a;
+  font-weight: 900;
+}
+
+.bonus-card p {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.bonus-card .bonus-download-cta {
+  color: #ffd84a;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.bonus-cta {
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 18px;
+  padding: 12px 22px;
+  background: var(--gradient-cta);
+  color: #fff;
+  font-weight: 900;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(173, 24, 43, 0.35), inset 0 -2px 0 rgba(0, 0, 0, 0.12);
+  border: 2px solid var(--color-cta);
+}
+
+/* ==========================================================================
+   SHIPPING STRIP
+   ========================================================================== */
+
+.shipping-strip {
+  background: #CC2B4D;
+  padding: 30px 0;
+}
+
+.shipping-strip-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.shipping-seal-img {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+}
+
+.shipping-strip-text {
+  text-align: left;
+}
+
+.shipping-strip h3 {
+  color: var(--color-pure-white);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.shipping-highlight {
+  color: #ffd89e;
+}
+
+.shipping-strip p {
+  color: var(--color-pure-white);
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.shipping-sub {
+  font-size: 15px;
+  opacity: 0.75;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+
+.about-section {
+  overflow: hidden;
+}
+
+/* Header banner */
+.about-header {
+  background: #AD182B;
+  padding: 45px 0 40px;
+  color: var(--color-pure-white);
+}
+
+.about-date {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-water-green);
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.about-header h2 {
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.about-underline {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.about-subtitle {
+  font-size: 20px;
+  margin-top: 12px;
+  opacity: 0.9;
+}
+
+/* Content Block 1: Text over background image */
+
+.about-hero-text p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* Content area */
+.about-content {
+  background: var(--color-pure-white);
+  padding: 56px 0 40px;
+}
+
+/* Editorial two-column blocks */
+.about-block {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  margin: 0 0 36px;
+}
+
+.about-block__media {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.about-block--media-left {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.about-block--media-left .about-block__media { order: 0; }
+.about-block--media-left .about-block__body  { order: 1; }
+
+.about-block__media {
+  margin: 0;
+}
+
+.about-block__media img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 440px;
+  margin: 0 auto;
+  border-radius: 18px;
+}
+
+.about-block__body > *:first-child { margin-top: 0; }
+.about-block__body > *:last-child  { margin-bottom: 0; }
+
+.about-block__body p {
+  margin-bottom: 26px;
+}
+
+/* Text styles */
+.about-content p {
+  font-size: 17px;
+  line-height: 1.65;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.about-content h3 {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 15px;
+}
+
+.about-highlight {
+  background: rgba(90, 138, 140, 0.08);
+  border-left: 4px solid var(--color-accent);
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.about-good-news {
+  color: var(--color-accent-2);
+  font-size: 19px;
+}
+
+/* Quote callout — white card with teal top border */
+.quote-callout {
+  clear: both;
+  border: 1px solid rgba(90, 138, 140, 0.18);
+  border-top: 4px solid var(--color-accent);
+  padding: 22px 26px;
+  margin: 32px 0;
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--color-text);
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 4px 16px rgba(26, 26, 26, 0.06);
+  font-style: italic;
+}
+
+.quote-callout p {
+  margin: 0;
+}
+
+/* ==========================================================================
+   PRODUCT INTRO SECTION
+   ========================================================================== */
+
+.product-intro-section {
+  background:
+    radial-gradient(circle at 78% 45%, rgba(187, 82, 140, 0.38), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(173, 24, 43, 0.28), transparent 50%),
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0),
+    #AD182B;
+  background-size: auto, auto, 28px 28px, auto;
+  padding: 110px 0 120px;
+  color: var(--color-pure-white);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 50%, rgba(187, 82, 140, 0.18), transparent 35%);
+  pointer-events: none;
+}
+
+.product-intro-section::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 620px;
+  height: 620px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(187, 82, 140, 0.35), transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.product-intro-content {
+  position: relative;
+  z-index: 1;
+}
+
+.product-intro-text {
+  max-width: 620px;
+}
+
+.product-intro-lead {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  margin-bottom: 8px;
+}
+
+.product-intro-name {
+  font-size: 64px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 28px;
+}
+
+.product-intro-name .highlight {
+  background: var(--gradient-highlight);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.product-intro-text p {
+  font-size: 19px;
+  line-height: 1.65;
+  margin-bottom: 22px;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.product-intro-text p:last-child {
+  margin-bottom: 0;
+}
+
+.product-intro-bottle {
+  position: absolute;
+  right: -160px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+}
+
+.product-intro-bottle .bottle {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: rotate(-12deg);
+  filter:
+    drop-shadow(0 40px 50px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 60px rgba(90, 138, 140, 0.35));
+}
+
+.product-intro-seal {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  width: 170px;
+  height: auto;
+  transform: rotate(-14deg);
+  filter:
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.45))
+    drop-shadow(0 0 20px rgba(255, 220, 120, 0.25));
+  z-index: 2;
+}
+
+/* ==========================================================================
+   INGREDIENTS SECTION
+   ========================================================================== */
+
+.ingredients-section {
+  padding: 70px 0;
+  background: var(--color-page);
+}
+
+.ingredients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.ingredients-grid .ingredient-card {
+  max-width: 100%;
+}
+
+.ingredients-allergen {
+  max-width: 820px;
+  margin: 36px auto 0;
+  padding: 16px 22px;
+  background: #fff;
+  border: 1px solid rgba(173, 24, 43, 0.3);
+  border-left: 4px solid var(--color-cta);
+  border-radius: 6px;
+  color: var(--color-text);
+  font-size: 15px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.ingredients-allergen strong {
+  color: var(--color-cta);
+  font-weight: 800;
+}
+
+.ingredient-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.ingredient-img-wrapper {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 15px;
+}
+
+.ingredient-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ingredient-card h3 {
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.ingredient-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--color-accent-2);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ingredient-dose {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-accent);
+  display: block;
+}
+
+.ingredient-latin {
+  display: block;
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+.ingredient-card p {
+  font-size: 16px;
+  line-height: 24px;
+  color: #555;
+}
+
+/* ==========================================================================
+   BENEFITS SECTION
+   ========================================================================== */
+
+.benefits-section {
+  background: var(--color-cream);
+  padding: 60px 0;
+}
+
+.benefits-section h2 {
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 40px;
+  font-size: 36px;
+  font-weight: 900;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 25px 15px;
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.benefit-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.benefit-card h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.35;
+}
+
+/* ==========================================================================
+   TESTIMONIALS SECTION
+   ========================================================================== */
+
+.testimonials-section {
+  padding: 70px 0;
+  background: var(--color-pure-white);
+}
+
+.testimonials-section h2 {
+  text-align: center;
+  color: var(--color-deep-indigo);
+  margin-bottom: 24px;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.25;
+}
+
+.testi-accent {
+  display: block;
+  color: var(--color-royal-purple);
+}
+
+.testi-polaroids {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 10px auto 36px;
+}
+
+.testi-polaroids .polaroid {
+  width: 200px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  padding: 8px 8px 16px;
+  background: #fff;
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+}
+
+.testi-polaroids .polaroid:nth-child(1) { transform: rotate(-4deg); }
+.testi-polaroids .polaroid:nth-child(2) { transform: rotate(2deg); }
+.testi-polaroids .polaroid:nth-child(3) { transform: rotate(-2deg); }
+
+.testimonials-grid {
+  display: block;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.testi-card {
+  border: 2px solid var(--color-royal-purple);
+  border-radius: 14px;
+  padding: 32px 30px;
+  margin-top: 22px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.testi-card::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.testi-photo {
+  float: right;
+  width: 150px;
+  margin: 0 -6px 10px 28px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+
+.testi-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.testi-title {
+  font-size: 26px;
+  line-height: 1.3;
+  font-weight: 800;
+  color: var(--color-deep-indigo);
+  margin-bottom: 12px;
+}
+
+.testi-stars {
+  color: #f5b50a;
+  font-size: 22px;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.testi-quote {
+  font-size: 19px;
+  line-height: 1.55;
+  font-style: italic;
+  color: #444;
+  margin-bottom: 22px;
+}
+
+.testi-signature {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #575757;
+}
+
+.testi-signature span {
+  font-weight: 800;
+  color: #000;
+  font-size: 18px;
+}
+
+/* ==========================================================================
+   FAQ SECTION
+   ========================================================================== */
+
+.faq-section {
+  padding: 80px 0;
+}
+
+.faq-layout {
+  display: flex;
+  gap: 50px;
+  align-items: stretch;
+}
+
+.faq-left {
+  flex: 0 0 38%;
+  position: relative;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq-left h2 {
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.faq-bottle {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-bottle .bottle {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  transform: rotate(-12deg);
+  filter:
+    drop-shadow(0 30px 40px rgba(0, 0, 0, 0.2))
+    drop-shadow(0 0 50px rgba(90, 138, 140, 0.25));
+}
+
+.faq-seal {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  width: 150px;
+  height: auto;
+  transform: rotate(-14deg);
+  filter:
+    drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35))
+    drop-shadow(0 0 18px rgba(255, 220, 120, 0.2));
+  z-index: 2;
+}
+
+.faq-cta {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 20px 28px;
+  font-size: 20px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.faq-cta-arrow {
+  display: inline-block;
+  margin-left: 10px;
+  animation: faqArrowSlide 1.2s ease-in-out infinite;
+}
+
+@keyframes faqArrowSlide {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(8px); }
+}
+
+.faq-right {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ==========================================================================
+   SCIENTIFIC REFERENCES SECTION
+   ========================================================================== */
+
+.references-section {
+  background: var(--color-cream);
+  padding: 40px 0;
+}
+
+.jellythin-label-img,
+.jointrix-label-img,
+.nervecell-label-img {
+  display: block;
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(26, 26, 26, 0.08);
+}
+
+.references-section h2 {
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 10px;
+}
+
+.references-disclaimer {
+  text-align: center;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 25px;
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.references-col ol {
+  padding-left: 20px;
+  font-size: 13px;
+  color: #666;
+  line-height: 22px;
+  list-style: decimal;
+}
+
+.references-col li {
+  margin-bottom: 10px;
+}
+
+/* === SCIENTIFIC REFERENCES SECTION (replicado do leanzene) ============= */
+
+.scientific-references {
+  padding: 0 0 64px;
+  background: #fff;
+}
+
+.scientific-references__label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #aaa;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.scientific-references__logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 12px;
+}
+
+.scientific-references__logos img {
+  max-height: 60px;
+  width: auto;
+}
+
+.scientific-references__disclaimer {
+  font-size: 12px;
+  color: #bbb;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.scientific-references__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.scientific-references__cols p {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+/* Inline citation markers (used inside .quote-callout <p>) */
+.cite-marker {
+  display: inline;
+  font-size: 0.6em;
+  vertical-align: super;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--color-accent);
+  margin-left: 2px;
+  font-feature-settings: "lnum";
+  border-bottom: 1px dotted transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.cite-marker:hover {
+  color: var(--color-text);
+  border-bottom-color: currentColor;
+}
+
+/* Inline reference paragraph (nested INSIDE each .quote-callout) */
+.quote-callout .quote-reference {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.6;
+  color: #6f7a83;
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px dashed rgba(90, 138, 140, 0.22);
+}
+
+.quote-callout .quote-reference__label {
+  color: var(--color-accent);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  margin-right: 2px;
+}
+
+.quote-callout .quote-reference em {
+  font-style: italic;
+  color: var(--color-text);
+}
+
+.quote-callout .quote-reference__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(90, 138, 140, 0.45);
+  padding-bottom: 1px;
+  font-style: normal;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-left: 6px;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.quote-callout .quote-reference__link svg {
+  transition: transform 0.18s ease;
+  margin-bottom: -1px;
+}
+
+.quote-callout .quote-reference__link:hover {
+  color: var(--color-text);
+  border-bottom-color: currentColor;
+}
+
+.quote-callout .quote-reference__link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+@media (max-width: 600px) {
+  .quote-callout .quote-reference {
+    font-size: 11.5px;
+    padding-top: 10px;
+    margin-top: 12px;
+  }
+  .quote-callout .quote-reference__link {
+    margin-left: 0;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 600px) {
+  .scientific-references__cols {
+    grid-template-columns: 1fr;
+  }
+  .scientific-references__logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* =========================================================================
+   TRANSFORMATION / SOCIAL PROOF  (copiado de wv3)
+   ========================================================================= */
+.transformation{background:#fff;padding:64px 0;}
+.transformation .wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+.transformation .kicker{text-align:center;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#CC2B4D;margin-bottom:12px;}
+.transformation h2{text-align:center;font-size:28px;line-height:1.28;font-weight:900;letter-spacing:-.4px;max-width:780px;margin:0 auto 34px;}
+@media(max-width:600px){.transformation h2{font-size:23px;}}
+.transformation-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:940px;margin:0 auto 36px;}
+@media(max-width:760px){.transformation-grid{grid-template-columns:1fr;gap:18px;}}
+.transformation-grid figure{margin:0;border-radius:16px;overflow:hidden;box-shadow:0 6px 24px rgba(26,26,26,.08);background:#FFF3F0;}
+.transformation-grid img{width:100%;display:block;}
+.transformation-grid figcaption{font-size:12px;color:#6b6b6b;text-align:center;padding:10px 14px;font-weight:600;}
+.transformation .story{max-width:680px;margin:0 auto;}
+.transformation .story p{font-size:16px;line-height:1.7;color:#3a3a3a;margin-bottom:18px;text-align:center;}
+.transformation .story p.story-open{font-size:18px;font-weight:600;color:#1A1A1A;}
+.transformation .story p.story-close{font-weight:600;color:#AD182B;}
+.transformation .results-disclaimer{max-width:700px;margin:28px auto 0;font-size:12px;line-height:1.6;color:#9a9a9a;text-align:center;font-style:italic;}
+/* Video testimonials below before/after */
+.video-wall{max-width:1000px;margin:8px auto 0;}
+.video-wall .video-kicker{text-align:center;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#CC2B4D;margin-bottom:8px;}
+.video-wall h3{text-align:center;font-size:22px;font-weight:900;letter-spacing:-.3px;margin:0 auto 26px;}
+.video-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:20px;}
+.video-grid + .video-grid{margin-top:20px;}
+.video-grid .vcard{background:transparent;border-radius:12px;overflow:hidden;}
+.video-grid .vcard vturb-smartplayer{display:block;width:100%;border-radius:10px;overflow:hidden;}
+/* 4:3 landscape videos (1 & 3) */
+.vcard--wide{flex:1 1 360px;max-width:440px;}
+.vcard--wide vturb-smartplayer{aspect-ratio:4/3;}
+/* 9:16 portrait videos (2, 4 & 5) */
+.vcard--tall{flex:1 1 240px;max-width:270px;}
+.vcard--tall vturb-smartplayer{aspect-ratio:9/16;}
+@media(max-width:760px){
+  .vcard--wide{flex:1 1 100%;max-width:440px;}
+  .vcard--tall{flex:1 1 46%;max-width:270px;}
+}
+/* mid CTA dentro da transformation */
+.transformation .mid-cta{text-align:center;padding:0 24px;}
+.transformation .btn-wide{display:inline-block;background:#AD182B;color:#fff;font-size:17px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:18px 70px;border-radius:10px;box-shadow:0 5px 0 #7d1020;transition:background .2s,transform .12s;text-decoration:none;}
+.transformation .btn-wide:hover{background:#CC2B4D;}
+.transformation .btn-wide:active{transform:translateY(3px);box-shadow:0 2px 0 #7d1020;}
+.transformation .cta-guarantee{display:flex;align-items:center;justify-content:center;gap:7px;font-size:13px;color:#6b6b6b;font-weight:600;margin-top:14px;}
+.transformation .cta-guarantee svg{width:16px;height:16px;color:#AD182B;}
+
+
+/* ===== css/responsive.css ===== */
+/* ==========================================================================
+   JoinTrix - Responsive Breakpoints
+   ========================================================================== */
+
+/* ==========================================================================
+   MAX-WIDTH: 1200px
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .bdinpad {
+    padding: 0 28px;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .hero-subheading {
+    font-size: 22px;
+  }
+
+  /* Product intro */
+  .product-intro-name {
+    font-size: 48px;
+  }
+
+  .product-intro-image {
+    flex: 0 0 250px;
+  }
+}
+
+/* ==========================================================================
+   MAX-WIDTH: 1030px (Tablet)
+   ========================================================================== */
+
+@media (max-width: 1030px) {
+  .container {
+    max-width: 750px;
+  }
+
+  /* Hide desktop menu, show hamburger */
+  .hide-1030 {
+    display: none !important;
+  }
+
+  .show-1030 {
+    display: block !important;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .hero-subheading {
+    font-size: 20px;
+  }
+
+  /* Pricing stack — Mobile order: 6 bottles first, then 3, then 1 */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .pricing-grid .pricing-flip-container:nth-child(1) { order: 3; } /* 1 bottle last */
+  .pricing-grid .pricing-flip-container:nth-child(2) { order: 1; } /* 6 bottles first */
+  .pricing-grid .pricing-flip-container:nth-child(3) { order: 2; } /* 3 bottles second */
+
+  /* Ingredients 2-col (grid) */
+  .ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Bonuses 2-col on tablet */
+  .bonuses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Testimonials */
+  .testimonials-section h2 {
+    font-size: 30px;
+  }
+
+  .testi-card {
+    padding: 28px 22px;
+  }
+
+  .testi-photo {
+    width: 150px;
+    margin-left: 20px;
+  }
+
+  .testi-polaroids .polaroid {
+    width: 160px;
+    height: 180px;
+  }
+
+  /* FAQ */
+  .faq-layout {
+    flex-direction: column;
+  }
+
+  .faq-left {
+    display: contents;
+  }
+
+  .faq-left h2 {
+    order: 1;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  .faq-right {
+    order: 2;
+    margin-bottom: 32px;
+  }
+
+  .faq-bottle {
+    order: 3;
+    max-width: 300px;
+    margin: 0 auto 24px;
+  }
+
+  .faq-seal {
+    width: 140px;
+    top: 14px;
+    right: -10px;
+  }
+
+  .faq-cta {
+    order: 4;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* Product intro */
+  .product-intro-content {
+    text-align: center;
+  }
+
+  .product-intro-text {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .product-intro-bottle {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 280px;
+    margin: 40px auto 0;
+  }
+
+  .product-intro-bottle .bottle {
+    transform: rotate(-8deg);
+    filter:
+      drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 40px rgba(160, 110, 240, 0.3));
+  }
+
+  .product-intro-seal {
+    width: 110px;
+    top: 10px;
+    left: -10px;
+    transform: rotate(-12deg);
+  }
+
+  .product-intro-section {
+    padding: 60px 0 70px;
+  }
+
+  .product-intro-section::after {
+    width: 380px;
+    height: 380px;
+    right: -120px;
+  }
+
+  /* Button adjustments */
+  .btn-primary {
+    font-size: 18px;
+    padding: 14px 30px;
+  }
+
+  /* FAQ question */
+  .faq-question {
+    font-size: 17px;
+  }
+
+  /* Claim strip */
+  .claim-strip-heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .claim-strip-sub {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   MAX-WIDTH: 767px (Mobile landscape / small tablet)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Testimonials */
+  .testimonials-section h2 {
+    font-size: 28px;
+  }
+
+  .testi-card {
+    padding: 26px 18px;
+  }
+
+  .testi-photo {
+    width: 130px;
+    margin: 0 -4px 10px 18px;
+  }
+
+  .testi-title {
+    font-size: 22px;
+  }
+
+  .testi-quote {
+    font-size: 18px;
+  }
+
+  .testi-polaroids .polaroid {
+    width: 140px;
+    height: 160px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 640px;
+    padding: 0 15px;
+  }
+
+  .bdinpad {
+    padding: 0 12px;
+  }
+
+  /* Hide/show utilities */
+  .hide-767 {
+    display: none !important;
+  }
+
+  .show-767 {
+    display: block !important;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .hero-subheading {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-right {
+    margin-top: 20px;
+  }
+
+  .hero-card-header {
+    font-size: 24px;
+  }
+
+  .hero-testimonials {
+    flex-direction: column;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-big {
+    font-size: 44px;
+  }
+
+  .combo-ebooks img {
+    height: 48px;
+  }
+
+  .combo-badge {
+    font-size: 10px;
+    padding: 2px 10px;
+  }
+
+  /* Ingredients single col */
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ingredients-grid .ingredient-card {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 16px 12px;
+  }
+
+  .ingredient-card h3 {
+    font-size: 19px;
+  }
+
+  .ingredient-latin {
+    font-size: 13px;
+  }
+
+  .ingredient-card p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .ingredients-section .section-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  /* Benefits 2-col */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Bonuses single col */
+  .bonuses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* VSL offer headline */
+  .vsl-offer-headline h3 {
+    font-size: 18px;
+  }
+  .vsl-countdown .stopwatch {
+    font-size: 22px;
+  }
+
+  /* References single column */
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Button full-width */
+  .btn-primary {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 18px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 16px;
+    padding: 15px 45px 15px 15px;
+  }
+
+  /* Guarantee */
+  .guarantee-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guarantee-copy {
+    text-align: center;
+  }
+
+  .guarantee-title {
+    font-size: 30px;
+  }
+
+  .guarantee-badge-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Product intro */
+  .product-intro-section {
+    padding: 40px 0;
+  }
+
+  .product-intro-name {
+    font-size: 36px;
+  }
+
+  .product-intro-lead {
+    font-size: 18px;
+  }
+
+  /* Shipping strip */
+  .shipping-strip-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .shipping-strip-text {
+    text-align: center;
+  }
+
+  .shipping-strip h3 {
+    font-size: 22px;
+  }
+
+  /* About section */
+
+  .about-block,
+  .about-block--media-left {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .about-block--media-left .about-block__media { order: 0; }
+  .about-block--media-left .about-block__body  { order: 1; }
+
+  .about-block__media {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .about-block__media img {
+    max-height: 360px;
+  }
+
+  .about-header h2 {
+    font-size: 28px;
+  }
+
+  .about-content h3 {
+    font-size: 22px;
+  }
+
+  .quote-callout {
+    font-size: 17px;
+  }
+
+  /* Claim strip */
+  .claim-strip {
+    padding: 26px 0 20px;
+  }
+
+  .claim-strip-heading {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .claim-strip-sub {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* Footer */
+  .footer-links {
+    gap: 12px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 24px;
+  }
+
+  /* Section padding reduction */
+  .pricing-section,
+  .bonuses-section,
+  .ingredients-section,
+  .benefits-section,
+  .testimonials-section,
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  /* Section header */
+  .section-header h2 {
+    font-size: 30px;
+  }
+}
+
+/* ==========================================================================
+   MAX-WIDTH: 479px (Mobile portrait)
+   ========================================================================== */
+
+@media (max-width: 479px) {
+
+  /* Hide/show utilities */
+  .hide-479 {
+    display: none !important;
+  }
+
+  .show-479 {
+    display: block !important;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .hero-subheading {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .hero-card-header {
+    font-size: 22px;
+  }
+
+  /* Benefits single column */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FAQ small */
+  .faq-left h2 {
+    font-size: 24px;
+  }
+
+  .faq-bottle {
+    max-width: 180px;
+  }
+
+  .faq-seal {
+    width: 90px;
+  }
+
+  .combo-ebooks img {
+    height: 40px;
+  }
+
+  .combo-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+
+  /* Price */
+  .price-big {
+    font-size: 40px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 15px;
+    padding: 14px 40px 14px 14px;
+  }
+
+  .faq-toggle {
+    font-size: 20px;
+  }
+
+  /* Testimonial */
+  .testimonials-section h2 {
+    font-size: 26px;
+  }
+
+  .testi-card {
+    padding: 24px 16px;
+  }
+
+  .testi-photo {
+    width: 110px;
+    margin: 0 -4px 8px 14px;
+  }
+
+  .testi-title {
+    font-size: 20px;
+  }
+
+  .testi-quote {
+    font-size: 17px;
+  }
+
+  .testi-polaroids {
+    gap: 10px;
+  }
+
+  .testi-polaroids .polaroid {
+    width: 105px;
+    height: 120px;
+    padding: 5px 5px 10px;
+  }
+
+  .testi-photo {
+    width: 95px;
+  }
+
+  .testimonial-quote {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  /* Hero testimonial boxes */
+  .hero-testimonial-box p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* Product intro */
+  .product-intro-name {
+    font-size: 28px;
+  }
+
+  .product-intro-text p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .product-intro-bottle {
+    width: 220px;
+    margin-top: 32px;
+  }
+
+  .product-intro-seal {
+    width: 90px;
+    top: 6px;
+    left: -8px;
+  }
+
+  .product-intro-section {
+    padding: 48px 0 56px;
+  }
+
+  .product-intro-section::after {
+    width: 280px;
+    height: 280px;
+    right: -100px;
+    filter: blur(30px);
+  }
+
+  .product-intro-lead {
+    font-size: 14px;
+    letter-spacing: 0.8px;
+  }
+
+  /* Ingredient cards */
+  .ingredient-img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Section padding further reduction */
+  .pricing-section,
+  .bonuses-section,
+  .ingredients-section,
+  .benefits-section,
+  .testimonials-section,
+  .faq-section {
+    padding: 30px 0;
+  }
+
+  /* Guarantee */
+  .guarantee-title {
+    font-size: 26px;
+  }
+
+  .guarantee-badge-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .guarantee-copy {
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px 0;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 22px;
+  }
+
+  /* Section header */
+  .section-header h2 {
+    font-size: 26px;
+  }
+}
+
+    </style>
+
+    <!-- ============================================================= -->
+    <!-- BuyGoods - Tracking da LANDING v1 (3 packs: 1 / 2 / 3 bottles) -->
+    <!-- Variante WT (20% off): jell{1,2,3}_fun_b3_wt (one-time)         -->
+    <!-- + jell{1,2,3}_fun_b3_wt_rc (recurring) — account_id 12557.      -->
+    <!-- ============================================================= -->
+    <script>
+      var mysrc = "https://tracking.buygoods.com/track/?a=12557&firstcookie=0" + "&tracking_redirect=&referrer=" + encodeURIComponent(document.referrer) + "&sessid2=" + ReadCookie('sessid2') + "&product=jell1_fun_b3_wt,jell2_fun_b3_wt,jell3_fun_b3_wt,jell1_fun_b3_wt_rc,jell2_fun_b3_wt_rc,jell3_fun_b3_wt_rc&vid1=&vid2=&vid3=&caller_url=" + encodeURIComponent(window.location.href);
+      if (typeof add_to_cart !== 'undefined') { mysrc = mysrc + '&add_to_cart=' + add_to_cart; }
+      var newScript = document.createElement('script');
+      newScript.type = 'text/javascript';
+      newScript.defer = true;
+      newScript.src = mysrc;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(newScript, s);
+
+      function ReadCookie(name) {
+        name += '=';
+        var parts = document.cookie.split(/;\s*/);
+        for (var i = 0; i < parts.length; i++) {
+          var part = parts[i];
+          if (part.indexOf(name) == 0) return part.substring(name.length);
+        }
+        return '';
+      }
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- BuyGoods - Iframe de tracking de visitante (versão landing)    -->
+    <!-- ============================================================= -->
+    <script type="text/javascript">
+      setTimeout(function () {
+        var i = document.createElement("iframe"),
+            oid = new URLSearchParams(window.location.search);
+        i.async = true;
+        i.style = "display:none";
+        i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12557&t=a76633e4d1689164ca4eafe472fc9fae&s=" + ReadCookie('sessid2'));
+        document.body.appendChild(i);
+      }, 1000);
+    </script>
+
+      <!-- Tracking BuyGoods -->
+    <script>var mysrc = "https://tracking.buygoods.com/track/?a=12557&firstcookie=0"+"&tracking_redirect=&referrer="+encodeURIComponent(document.referrer)+"&sessid2="+ReadCookie('sessid2')+"&product=jell1_fun_b3_wt,jell2_fun_b3_wt,jell3_fun_b3_wt,jell1_fun_b3_wt_rc,jell2_fun_b3_wt_rc,jell3_fun_b3_wt_rc&vid1=&vid2=&vid3=&caller_url="+encodeURIComponent(window.location.href); if(typeof add_to_cart !== 'undefined') { mysrc = mysrc+'&add_to_cart='+add_to_cart; } var newScript = document.createElement('script'); newScript.type = 'text/javascript'; newScript.defer = true; newScript.src = mysrc; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(newScript, s); function ReadCookie(name){name += '='; var parts = document.cookie.split(/;\s*/);for (var i = 0; i < parts.length; i++) {var part = parts[i]; if (part.indexOf(name) == 0) return part.substring(name.length)} return '';}</script>
+    <script type="text/javascript">setTimeout(function () {var i = document.createElement("iframe"),oid = new URLSearchParams(window.location.search);i.async = true;i.style="display:none";i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12557&t=974b873dd7d52631ed53ed2aa53afda1&s="+ReadCookie('sessid2'));document.body.appendChild(i);}, 1000);</script>
+
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-69QEL35WSV"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-69QEL35WSV');
+</script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XTGKDRM"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- ============================================ -->
+    <!-- SECTION 1: HEADER (Sticky Navigation)        -->
+    <!-- ============================================ -->
+    <header class="header vsl-delayed" id="header">
+        <div class="container bdinpad">
+            <a href="#" class="logo">Jelly<span>Thin</span></a>
+            <ul class="menu hide-1030">
+                <li><a href="#bonuses-section" class="scroll-to-section">FREE Bonuses</a></li>
+                <li><a href="#about-section" class="scroll-to-section">About</a></li>
+                <li><a href="#ingredients-section" class="scroll-to-section">Ingredients</a></li>
+                <li><a href="#faq-section" class="scroll-to-section">FAQ</a></li>
+                <li><a href="#order-section" class="scroll-to-section">BUY NOW</a></li>
+            </ul>
+            <!-- Hamburger for mobile -->
+            <div id="menu-wrapper" class="show-1030">
+                <div id="hamburger-menu">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+            <div id="menu-container" class="show-1030">
+                <ul class="menu-list">
+                    <li><a href="#bonuses-section" class="scroll-to-section">FREE Bonuses</a></li>
+                    <li><a href="#about-section" class="scroll-to-section">About</a></li>
+                    <li><a href="#ingredients-section" class="scroll-to-section">Ingredients</a></li>
+                    <li><a href="#faq-section" class="scroll-to-section">FAQ</a></li>
+                    <li><a href="#order-section" class="scroll-to-section">Buy Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- ============================================ -->
+        <!-- SECTION 2: HERO / BANNER                    -->
+        <!-- ============================================ -->
+        <section class="hero-section">
+            <div class="container bdinpad">
+                <div class="hero-heading">
+                    <h1>Never Mix This Strange Gelatin Trick if You Don't Want To Lose 34 Lbs Before June Ends</h1>
+                    <br>
+                    <vturb-smartplayer id="vid-6a2089abe90df3848a270d39" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/6a2089abe90df3848a270d39/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+                    <div class="vsl-delayed">
+                        <br><br>
+                        <h1>The Complete Metabolism Reset</h1>
+                        <p class="hero-subheading">Feel Lighter. Boost Calorie Burning. Fit Back Into Your Own Life with JellyThin.</p>
+                    </div>
+                </div>
+                <div class="vsl-delayed">
+                <div class="hero-content">
+                    <div class="hero-left">
+                        <img src="images/jellythin-3.png" alt="JellyThin 2 Bottles" class="hero-product-img" loading="lazy">
+                    </div>
+                    <div class="hero-right">
+                        <div class="hero-card">
+                            <div class="hero-card-header">
+                                <p>Claim Your Discounted</p>
+                                <p>JellyThin Today!</p>
+                            </div>
+                            <div class="hero-card-body">
+                                <img src="images/jellythin-3.png" alt="JellyThin 3 Bottle Package" class="hero-product-img">
+                                <div class="hero-card-bonuses">
+                                    <p class="hero-card-bonuses-title">3 FREE DIGITAL BONUSES+ FREE USA SHIPPING</p>
+                                    <div class="hero-card-bonuses-grid three-up">
+                                        <div class="hero-bonus">
+                                            <span class="hero-bonus-tag">FREE</span>
+                                            <img src="images/bonus-keto-kickstart.png" alt="The Keto Kickstart ebook" loading="lazy">
+                                            <div class="hero-bonus-text">
+                                                <p class="hero-bonus-label">BONUS #1</p>
+                                                <p class="hero-bonus-name">The Keto Kickstart</p>
+                                            </div>
+                                        </div>
+                                        <div class="hero-bonus">
+                                            <span class="hero-bonus-tag">FREE</span>
+                                            <img src="images/bonus-jelly-diet.png" alt="The Jelly Diet ebook" loading="lazy">
+                                            <div class="hero-bonus-text">
+                                                <p class="hero-bonus-label">BONUS #2</p>
+                                                <p class="hero-bonus-name">The Jelly Diet</p>
+                                            </div>
+                                        </div>
+                                        <div class="hero-bonus">
+                                            <span class="hero-bonus-tag">FREE</span>
+                                            <img src="images/bonus-metabolism-journey.png" alt="The Metabolism Journey ebook" loading="lazy">
+                                            <div class="hero-bonus-text">
+                                                <p class="hero-bonus-label">BONUS #3</p>
+                                                <p class="hero-bonus-name">The Metabolism Journey</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- CTA do hero: rola até a seção de pricing (NÃO é buy link) -->
+                                <a href="#order-section" class="btn-primary btn-block scroll-to-section">BUY NOW &amp; SAVE <span class="faq-cta-arrow" aria-hidden="true">&rarr;</span></a>
+                                <div class="hero-card-trust">
+                                    <div class="hero-card-trust-item">
+                                        <span>Secure Checkout</span>
+                                    </div>
+                                    <div class="hero-card-trust-item">
+                                        <span>60-Day Guarantee</span>
+                                    </div>
+                                    <div class="hero-card-trust-item">
+                                        <span>Made in the USA</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- VSL delay: only revealed after JS timer (SOP requirement) -->
+                <div class="vsl-offer-headline vsl-delayed" id="vsl-delayed-headline">
+                    <h3>Claim Your Discounted JellyThin While Stock Lasts!</h3>
+                    <div class="vsl-countdown">
+                        <span class="vsl-countdown-label">Offer ends in:</span>
+                        <span class="claim-timer"><span class="stopwatch">20:00</span></span>
+                        <span class="claim-act-text">ACT NOW!</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VSL delay: everything below the video stays hidden until the timer fires -->
+        <div class="vsl-delayed">
+
+        <!-- ============================================ -->
+        <!-- CTA STRIP (Before Pricing)                  -->
+        <!-- ============================================ -->
+        <section class="claim-strip">
+            <div class="container bdinpad">
+                <p class="claim-strip-heading">Claim Your JellyThin Discount Pack Today!</p>
+                <p class="claim-strip-sub">Available Only While Supplies Last!</p>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 3: PRICING / ORDER (1ª instância — v1 / 20% off)       -->
+        <!-- 3 cards (1 / 2 / 3 bottles), 3-bottle é featured.              -->
+        <!-- 1 bottle → jell1_fun_b3_wt → up1-01                             -->
+        <!-- 2 bottles → jell2_fun_b3_wt → up1-01                            -->
+        <!-- 3 bottles → jell3_fun_b3_wt → up1-03 (MOST POPULAR + bônus)     -->
+        <!-- ============================================================= -->
+        <section class="pricing-section" id="order-section">
+            <div class="container bdinpad">
+                <div class="section-header">
+                    <h2>Choose Your Discounted JellyThin Supply</h2>
+                </div>
+                <div class="pricing-grid">
+                    <!-- 1 Bottle (Basic) → jell1_fun_b3_wt -->
+                    <div class="pricing-flip-container">
+                        <button class="pricing-flip-btn" type="button" aria-label="Flip card">
+                            <span class="pricing-flip-btn-icon" aria-hidden="true">&#8634;</span>
+                            <span class="pricing-flip-btn-text">One-Time Offer</span>
+                        </button>
+                        <div class="pricing-card-flipper">
+                    <div class="pricing-card pricing-card--subscribe">
+                        <div class="pricing-card-label pricing-card-label--subscribe">Basic &mdash; 20% OFF</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">1 BOTTLE</h3>
+                            <p class="pricing-supply">30-Day Supply</p>
+                            <img src="images/jellythin.png" alt="JellyThin 1 Bottle" loading="lazy" class="pricing-img">
+                            <div class="pricing-price pricing-price--subscribe">
+                                <sup class="price-dollar">$</sup><span class="price-big">71</span>
+                                <span class="price-per">WITH SUBSCRIBE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $18!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title pricing-buy-options-title--subscribe">Subscribe &amp; Save Monthly</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/1" class="btn-primary btn-subscribe-gold btn-block buy-link">SUBSCRIBE &amp; SAVE &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-card pricing-card--normal" aria-hidden="true">
+                        <div class="pricing-card-label">Basic</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">1 BOTTLE</h3>
+                            <p class="pricing-supply">30-Day Supply</p>
+                            <img src="images/jellythin.png" alt="JellyThin 1 Bottle" loading="lazy" class="pricing-img">
+                            <div class="pricing-price">
+                                <sup class="price-dollar">$</sup><span class="price-big">89</span>
+                                <span class="price-per">PER BOTTLE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $18!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title">One-Time Purchase</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/2" class="btn-primary btn-block buy-link">BUY ONE BOTTLE &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping">+ Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Bottles (Most Popular - Featured) → jell3_fun_b3_wt -->
+                    <div class="pricing-flip-container pricing-flip-container--featured">
+                        <button class="pricing-flip-btn" type="button" aria-label="Flip card">
+                            <span class="pricing-flip-btn-icon" aria-hidden="true">&#8634;</span>
+                            <span class="pricing-flip-btn-text">One-Time Offer</span>
+                        </button>
+                        <div class="pricing-card-flipper">
+                    <div class="pricing-card pricing-card--subscribe pricing-card--subscribe-featured">
+                        <div class="pricing-card-label pricing-card-label--subscribe pricing-card-label--subscribe-featured">Most Popular &mdash; 20% OFF</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty featured-qty">3 BOTTLES</h3>
+                            <p class="pricing-supply">90-Day Supply</p>
+                            <div class="pricing-img-combo">
+                                <img src="images/jellythin-3.png" alt="JellyThin 3 Bottles" loading="lazy" class="pricing-img">
+                                <div class="combo-ebooks">
+                                    <div class="combo-ebooks-row">
+                                        <img src="images/bonus-keto-kickstart.png" alt="Bonus: The Keto Kickstart" loading="lazy">
+                                        <img src="images/bonus-jelly-diet.png" alt="Bonus: The Jelly Diet" loading="lazy">
+                                        <img src="images/bonus-metabolism-journey.png" alt="Bonus: The Metabolism Journey" loading="lazy">
+                                    </div>
+                                    <span class="combo-badge">+3 BONUS</span>
+                                </div>
+                            </div>
+                            <div class="pricing-price pricing-price--subscribe">
+                                <sup class="price-dollar">$</sup><span class="price-big">50</span>
+                                <span class="price-per">WITH SUBSCRIBE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> Biggest Discount</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 3 FREE Bonuses</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> FREE USA Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $150!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title pricing-buy-options-title--subscribe">Subscribe &amp; Save Monthly</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/5" class="btn-primary btn-subscribe-gold btn-block buy-link">SUBSCRIBE &amp; SAVE &#8594;</a>
+                                    <svg class="cursor-click-anim" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 9-6 1 4 8-3 1-4-8-5 4V3z" fill="#fff" stroke="#C49A1A" stroke-width="1.5"/></svg>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-card pricing-card--normal featured" aria-hidden="true">
+                        <div class="pricing-card-label featured-label">Most Popular</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty featured-qty">3 BOTTLES</h3>
+                            <p class="pricing-supply">90-Day Supply</p>
+                            <div class="pricing-img-combo">
+                                <img src="images/jellythin-3.png" alt="JellyThin 3 Bottles" loading="lazy" class="pricing-img">
+                                <div class="combo-ebooks">
+                                    <div class="combo-ebooks-row">
+                                        <img src="images/bonus-keto-kickstart.png" alt="Bonus: The Keto Kickstart" loading="lazy">
+                                        <img src="images/bonus-jelly-diet.png" alt="Bonus: The Jelly Diet" loading="lazy">
+                                        <img src="images/bonus-metabolism-journey.png" alt="Bonus: The Metabolism Journey" loading="lazy">
+                                    </div>
+                                    <span class="combo-badge">+3 BONUS</span>
+                                </div>
+                            </div>
+                            <div class="pricing-price">
+                                <sup class="price-dollar">$</sup><span class="price-big">59</span>
+                                <span class="price-per">PER BOTTLE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> Biggest Discount</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 3 FREE Bonuses</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> FREE USA Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $125!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title">One-Time Purchase</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/6" class="btn-primary btn-block btn-featured buy-link">BUY THREE BOTTLES &#8594;</a>
+                                    <svg class="cursor-click-anim" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 9-6 1 4 8-3 1-4-8-5 4V3z" fill="#fff" stroke="#AD182B" stroke-width="1.5"/></svg>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 Bottles (Bundle) → jell2_fun_b3_wt -->
+                    <div class="pricing-flip-container">
+                        <button class="pricing-flip-btn" type="button" aria-label="Flip card">
+                            <span class="pricing-flip-btn-icon" aria-hidden="true">&#8634;</span>
+                            <span class="pricing-flip-btn-text">One-Time Offer</span>
+                        </button>
+                        <div class="pricing-card-flipper">
+                    <div class="pricing-card pricing-card--subscribe">
+                        <div class="pricing-card-label pricing-card-label--subscribe">Bundle &mdash; 20% OFF</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">2 BOTTLES</h3>
+                            <p class="pricing-supply">60-Day Supply</p>
+                            <img src="images/jellythin-2.png" alt="JellyThin 2 Bottles" loading="lazy" class="pricing-img">
+                            <div class="pricing-price pricing-price--subscribe">
+                                <sup class="price-dollar">$</sup><span class="price-big">67</span>
+                                <span class="price-per">WITH SUBSCRIBE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $52!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title pricing-buy-options-title--subscribe">Subscribe &amp; Save Monthly</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/3" class="btn-primary btn-subscribe-gold btn-block buy-link">SUBSCRIBE &amp; SAVE &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-card pricing-card--normal" aria-hidden="true">
+                        <div class="pricing-card-label bundle-label">Bundle</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">2 BOTTLES</h3>
+                            <p class="pricing-supply">60-Day Supply</p>
+                            <img src="images/jellythin-2.png" alt="JellyThin 2 Bottles" loading="lazy" class="pricing-img">
+                            <div class="pricing-price">
+                                <sup class="price-dollar">$</sup><span class="price-big">79</span>
+                                <span class="price-per">PER BOTTLE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $52!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title">One-Time Purchase</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/4" class="btn-primary btn-block buy-link">BUY TWO BOTTLES &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping">+ Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 4: GUARANTEE                        -->
+        <!-- ============================================ -->
+        <section class="guarantee-section">
+            <div class="container bdinpad">
+                <h2 class="guarantee-title">100% Satisfaction60-Day Money Back Guarantee</h2>
+                <div class="guarantee-content">
+                    <img src="images/60days.png" alt="60-Day 100% Money Back Guarantee" class="guarantee-badge-img" loading="lazy">
+                    <p class="guarantee-copy">Your order today is protected by our iron-clad 60-day <strong>100% money-back guarantee</strong>. If you're not thrilled with how your body feels after using <strong>JellyThin</strong> &mdash; or if you simply change your mind for any reason at all &mdash; let us know any time within the next <strong>60 days</strong> and we'll refund every single penny of your investment. No hoops, no questions asked.</p>
+                </div>
+                <img src="images/icons-fda.png" alt="GMP Quality, FDA Registered, Natural Ingredients, Made in USA, GMO Free" class="guarantee-fda-icons" loading="lazy">
+                <p class="guarantee-mfg"><strong>JellyThin is proudly manufactured in the USA</strong> with the finest of domestic and foreign ingredients.</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 5: FREE BONUSES                     -->
+        <!-- ============================================ -->
+        <section class="bonuses-section" id="bonuses-section">
+            <div class="container bdinpad">
+                <h2>Order <span class="bonus-hl">3 Bottles</span> and Get <span class="bonus-hl-underline">3 FREE Bonuses</span>!</h2>
+                <div class="bonuses-grid">
+                    <!-- Bonus #1 -->
+                    <div class="bonus-card">
+                        <div class="bonus-image">
+                            <img src="images/bonus-keto-kickstart.png" alt="The Keto Kickstart ebook cover" loading="lazy">
+                            <span class="digital-download-badge">DIGITALDOWNLOAD</span>
+                        </div>
+                        <span class="bonus-label">BONUS #1</span>
+                        <h3>The Keto Kickstart <span class="bonus-price"><s>$47</s> <strong>FREE</strong></span></h3>
+                        <p>A warm, simple guide to the keto-aligned foods and recipes that help your body feel lighter, more energized, and back to itself.</p>
+                        <p class="bonus-download-cta">Instant Digital Download!</p>
+                    </div>
+                    <!-- Bonus #2 -->
+                    <div class="bonus-card">
+                        <div class="bonus-image">
+                            <img src="images/bonus-jelly-diet.png" alt="The Jelly Diet ebook cover" loading="lazy">
+                            <span class="digital-download-badge">DIGITALDOWNLOAD</span>
+                        </div>
+                        <span class="bonus-label">BONUS #2</span>
+                        <h3>The Jelly Diet <span class="bonus-price"><s>$57</s> <strong>FREE</strong></span></h3>
+                        <p>A stripped back approach to the food that you eat, that will give you more energy and help cleanse your body.</p>
+                        <p class="bonus-download-cta">Instant Digital Download!</p>
+                    </div>
+                    <!-- Bonus #3 -->
+                    <div class="bonus-card">
+                        <div class="bonus-image">
+                            <img src="images/bonus-metabolism-journey.png" alt="The Metabolism Journey ebook cover" loading="lazy">
+                            <span class="digital-download-badge">DIGITALDOWNLOAD</span>
+                        </div>
+                        <span class="bonus-label">BONUS #3</span>
+                        <h3>The Metabolism Journey <span class="bonus-price"><s>$37</s> <strong>FREE</strong></span></h3>
+                        <p>A pocket guide to how everyday habits quietly affect your metabolism &mdash; and the small daily shifts that work in your favor, one step at a time.</p>
+                        <p class="bonus-download-cta">Instant Digital Download!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 6: FREE SHIPPING STRIP              -->
+        <!-- ============================================ -->
+        <section class="shipping-strip">
+            <div class="container bdinpad">
+                <div class="shipping-strip-content">
+                    <img src="images/shipping-seal.png" alt="Free USA Shipping" class="shipping-seal-img">
+                    <div class="shipping-strip-text">
+                        <h3>Get <span class="shipping-highlight">Free Shipping</span> On Your <span class="shipping-highlight">3 Bottles</span> Order!</h3>
+                        <p><strong>Join 94% of Customers Who Choose the 3-Bottle Pack</strong></p>
+                        <p class="shipping-sub"><em>(Our Most Popular Option)</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 7: ABOUT / RESEARCH HOOK            -->
+        <!-- ============================================ -->
+        <section class="about-section" id="about-section">
+            <!-- Header Banner -->
+            <div class="about-header">
+                <div class="container bdinpad">
+                    <p class="about-date">April 2026 &ndash; Emerging Research</p>
+                    <h2>Scientists Are Uncovering the <span class="about-underline">Hidden Reason</span> Your Metabolism Feels Stuck</h2>
+                    <p class="about-subtitle"><em>And It's Not Just Your Age, Your Willpower, or What You Ate Last Night&hellip;</em></p>
+                </div>
+            </div>
+
+            <!-- Content: Editorial blocks (text + image grid) -->
+            <div class="about-content">
+                <div class="container bdinpad">
+
+                    <div class="about-block about-block--media-left">
+                        <figure class="about-block__media">
+                            <img src="images/metabolism.png" alt="Compounded metabolic slowdown illustration" loading="lazy">
+                        </figure>
+                        <div class="about-block__body">
+                            <h3>What Is Compounded Metabolic Slowdown?</h3>
+                            <p>Your body is engineered to convert food into fuel with remarkable efficiency &mdash; burning stored fat for energy when you need it, releasing steady glucose between meals, and sending clear signals when you're actually hungry versus just tired. When any one of these systems gets thrown off, the others start picking up the slack &mdash; and eventually, they all start to drift together.</p>
+                            <p>As we move past 35, this cascade quietly accelerates. Fat utilization becomes less efficient. Blood sugar swings get sharper. Hunger signals become less reliable. Afternoon energy dips get harder to shake. The result? That stubborn mid-section that won't respond to dieting, that constant pull toward sugar at 3 PM, that feeling of doing everything right and seeing nothing move on the scale.</p>
+                            <p><strong class="about-good-news">The good news?</strong> The JellyThin formula was thoughtfully designed with <strong>two research-informed compounds</strong> that may support the body's natural ability to address these core areas together &mdash; not just one at a time.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 8: PRODUCT INTRO                    -->
+        <!-- ============================================ -->
+        <section class="product-intro-section">
+            <div class="container bdinpad">
+                <div class="product-intro-content">
+                    <div class="product-intro-text">
+                        <p class="product-intro-lead">That's Why We Created&hellip;</p>
+                        <h2 class="product-intro-name">JellyThin</h2>
+                        <p><em>A gummy formula designed to nourish your metabolism &mdash; not just suppress it.</em></p>
+                        <p><strong>JellyThin is a 100% natural, easy-to-take gummy</strong> thoughtfully formulated to support a healthy metabolism &mdash; without harsh stimulants, prescription shortcuts, or complicated routines.</p>
+                        <p>This carefully crafted formula brings together <strong>two well-researched compounds &mdash; Apple Cider Vinegar and BHB salts</strong> &mdash; selected for their growing body of scientific interest in supporting the body's natural response to a slowed metabolism.</p>
+                        <p>A formula designed to help your body maintain balanced energy, support healthy appetite signals, and work with its own fat-burning rhythms &mdash; <strong>naturally</strong>, from the inside out.</p>
+                    </div>
+                    <div class="product-intro-bottle">
+                        <img src="images/jellythin.png" alt="JellyThin Single Bottle" loading="lazy" class="bottle">
+                        <img src="images/60days.png" alt="60-Day Money-Back Guarantee" loading="lazy" class="product-intro-seal">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 9: INGREDIENTS                      -->
+        <!-- ============================================ -->
+        <section class="ingredients-section" id="ingredients-section">
+            <div class="container bdinpad">
+                <div class="section-header">
+                    <h2>What's Inside this Carefully Crafted Formula?</h2>
+                    <p class="section-subhead">A focused blend of two research-informed compounds &mdash; nothing unnecessary, nothing hidden.</p>
+                </div>
+                <div class="ingredients-grid">
+                    <div class="ingredient-card">
+                        <div class="ingredient-img-wrapper">
+                            <img src="images/apple-cider-vinegar.webp" alt="Apple Cider Vinegar" loading="lazy">
+                        </div>
+                        <h3>Apple Cider Vinegar</h3>
+                        <span class="ingredient-subtitle">Supports healthy digestion &middot; Helps maintain a healthy appetite</span>
+                        <p>A well-studied fermented compound traditionally used to support digestive comfort and balanced appetite signals. Its acetic acid content has gained renewed scientific interest for its potential role in supporting healthy metabolic function.</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="ingredient-img-wrapper">
+                            <img src="images/calcium-bhb.webp" alt="Calcium BHB" loading="lazy">
+                        </div>
+                        <h3>Calcium BHB</h3>
+                        <span class="ingredient-subtitle">Supports ketone production &middot; Helps maintain bone and muscle health</span>
+                        <p>An exogenous β-hydroxybutyrate salt paired with calcium. Supports the body's natural ability to use fat for fuel while contributing to bone and muscle wellness as part of a balanced lifestyle.</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="ingredient-img-wrapper">
+                            <img src="images/magnesium-bhb.webp" alt="Magnesium BHB" loading="lazy">
+                        </div>
+                        <h3>Magnesium BHB</h3>
+                        <span class="ingredient-subtitle">Supports natural energy levels &middot; Helps maintain muscle function</span>
+                        <p>A BHB salt bound to magnesium, an essential electrolyte. Supports steady daily energy and contributes to healthy muscle function alongside the body's natural fat-for-fuel pathways.</p>
+                    </div>
+                    <div class="ingredient-card">
+                        <div class="ingredient-img-wrapper">
+                            <img src="images/sodium-bhb.webp" alt="Sodium BHB" loading="lazy">
+                        </div>
+                        <h3>Sodium BHB</h3>
+                        <span class="ingredient-subtitle">Supports electrolyte balance &middot; Helps support mental clarity</span>
+                        <p>A BHB salt paired with sodium to help maintain electrolyte balance during periods of metabolic shift. Supports steady focus and mental clarity throughout the day.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 10: BENEFITS / FEATURE BADGES       -->
+        <!-- ============================================ -->
+        <section class="benefits-section">
+            <div class="container bdinpad">
+                <h2>JellyThin Is:</h2>
+                <div class="benefits-grid">
+                   
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/s8licon2.png" alt="" loading="lazy">
+                        </div>
+                        <h4>Made with Well-Studied Ingredients</h4>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/s8licon3.png" alt="" loading="lazy">
+                        </div>
+                        <h4>Non-GMO</h4>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/s8licon4.png" alt="" loading="lazy">
+                        </div>
+                        <h4>Easy-to-Take Gummies</h4>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/s8licon5.png" alt="" loading="lazy">
+                        </div>
+                        <h4>Stimulant-Free</h4>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <img src="images/s8licon6.png" alt="" loading="lazy">
+                        </div>
+                        <h4>Non-Habit Forming</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- TRANSFORMATION / SOCIAL PROOF  (copiado de wv3)               -->
+        <!-- ============================================================= -->
+        <section class="transformation">
+            <div class="wrap">
+                <p class="kicker">Real Rituals</p>
+                <h2>For years, she avoided mirrors. Now she can't stop smiling at one.</h2>
+
+                <div class="transformation-grid">
+                    <figure>
+                        <img src="images/antes-depois1.png" alt="JellyThin customer before and after">
+                    </figure>
+                    <figure>
+                        <img src="images/antes-depois2.png" alt="JellyThin customer before and after">
+                    </figure>
+                </div>
+
+                <!-- Video testimonials -->
+                <div class="video-wall">
+                    <p class="video-kicker">Watch Their Stories</p>
+                    <h3>Real Customers, Real Results</h3>
+                    <!-- 4:3 landscape videos -->
+                    <div class="video-grid">
+                        <div class="vcard vcard--wide">
+                            <vturb-smartplayer id="vid-6a1f22966bf47696cea8032c" style="display: block; margin: 0 auto; width: 100%;" data-vturb-src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/6a1f22966bf47696cea8032c/v4/player.js"></vturb-smartplayer>
+                        </div>
+                        <div class="vcard vcard--wide">
+                            <vturb-smartplayer id="vid-6a1f22a871d177619b081115" style="display: block; margin: 0 auto; width: 100%;" data-vturb-src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/6a1f22a871d177619b081115/v4/player.js"></vturb-smartplayer>
+                        </div>
+                    </div>
+                    <!-- 9:16 portrait videos -->
+                    <div class="video-grid">
+                        <div class="vcard vcard--tall">
+                            <vturb-smartplayer id="vid-6a1f22a036afd0211612aba6" style="display: block; margin: 0 auto; width: 100%;" data-vturb-src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/6a1f22a036afd0211612aba6/v4/player.js"></vturb-smartplayer>
+                        </div>
+                        <div class="vcard vcard--tall">
+                            <vturb-smartplayer id="vid-6a1f22b8c675892e4796ba49" style="display: block; margin: 0 auto; width: 100%;" data-vturb-src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/6a1f22b8c675892e4796ba49/v4/player.js"></vturb-smartplayer>
+                        </div>
+                        <div class="vcard vcard--tall">
+                            <vturb-smartplayer id="vid-6a1f22c56bf47696cea80412" style="display: block; margin: 0 auto; width: 100%;" data-vturb-src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/6a1f22c56bf47696cea80412/v4/player.js"></vturb-smartplayer>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story">
+                    <p class="story-open">After 40, Linda's body felt like a stranger.</p>
+                    <p>She tried everything &mdash; diets that left her starving, workouts she dreaded, "miracle" teas that promised the world and delivered nothing. Nothing stuck. Until a friend told her about JellyThin.</p>
+                    <p>It wasn't magic. It was a simple daily ritual that finally felt gentle &mdash; no restriction, no obsession with the scale. Just a little support every morning while she focused on living again.</p>
+                    <p>Today, Linda looks at these two photos and doesn't just see a different body. She sees a woman who came back to herself. &#127807;</p>
+                    <p class="story-close">If your reflection has felt distant lately, maybe it's time to start your own ritual. &#128156;</p>
+                </div>
+
+                <p class="results-disclaimer">Results not typical. Individual results will vary and are not guaranteed. JellyThin is a dietary supplement intended to support a healthy lifestyle and is not intended to diagnose, treat, cure, or prevent any disease.</p>
+
+                <div class="mid-cta" style="margin-top:34px;">
+                    <a href="#order" class="btn-wide" id="storyCta">Start Your Ritual</a>
+                    <p class="cta-guarantee"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22c5-3 8-7 8-12V5l-8-3-8 3v5c0 5 3 9 8 12z"/></svg> 60-Day Money Back Guarantee</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- CTA STRIP (Before Second Pricing)           -->
+        <!-- ============================================ -->
+        <section class="claim-strip">
+            <div class="container bdinpad">
+                <p class="claim-strip-heading">Claim Your JellyThin Discount Pack Today!</p>
+                <p class="claim-strip-sub">Available Only While Supplies Last!</p>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- SECTION 11: PRICING / ORDER (2ª instância — idêntica à 1ª)    -->
+        <!-- ============================================================= -->
+        <section class="pricing-section" id="order-section-2">
+            <div class="container bdinpad">
+                <div class="section-header">
+                    <h2>Choose Your Discounted JellyThin Supply</h2>
+                </div>
+                <div class="pricing-grid">
+                    <!-- 1 Bottle (Basic) → jell1_fun_b3_wt -->
+                    <div class="pricing-flip-container">
+                        <button class="pricing-flip-btn" type="button" aria-label="Flip card">
+                            <span class="pricing-flip-btn-icon" aria-hidden="true">&#8634;</span>
+                            <span class="pricing-flip-btn-text">One-Time Offer</span>
+                        </button>
+                        <div class="pricing-card-flipper">
+                    <div class="pricing-card pricing-card--subscribe">
+                        <div class="pricing-card-label pricing-card-label--subscribe">Basic &mdash; 20% OFF</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">1 BOTTLE</h3>
+                            <p class="pricing-supply">30-Day Supply</p>
+                            <img src="images/jellythin.png" alt="JellyThin 1 Bottle" loading="lazy" class="pricing-img">
+                            <div class="pricing-price pricing-price--subscribe">
+                                <sup class="price-dollar">$</sup><span class="price-big">71</span>
+                                <span class="price-per">WITH SUBSCRIBE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $18!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title pricing-buy-options-title--subscribe">Subscribe &amp; Save Monthly</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/1" class="btn-primary btn-subscribe-gold btn-block buy-link">SUBSCRIBE &amp; SAVE &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-card pricing-card--normal" aria-hidden="true">
+                        <div class="pricing-card-label">Basic</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">1 BOTTLE</h3>
+                            <p class="pricing-supply">30-Day Supply</p>
+                            <img src="images/jellythin.png" alt="JellyThin 1 Bottle" loading="lazy" class="pricing-img">
+                            <div class="pricing-price">
+                                <sup class="price-dollar">$</sup><span class="price-big">89</span>
+                                <span class="price-per">PER BOTTLE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $18!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title">One-Time Purchase</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/2" class="btn-primary btn-block buy-link">BUY ONE BOTTLE &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping">+ Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- 3 Bottles (Most Popular - Featured) → jell3_fun_b3_wt -->
+                    <div class="pricing-flip-container pricing-flip-container--featured">
+                        <button class="pricing-flip-btn" type="button" aria-label="Flip card">
+                            <span class="pricing-flip-btn-icon" aria-hidden="true">&#8634;</span>
+                            <span class="pricing-flip-btn-text">One-Time Offer</span>
+                        </button>
+                        <div class="pricing-card-flipper">
+                    <div class="pricing-card pricing-card--subscribe pricing-card--subscribe-featured">
+                        <div class="pricing-card-label pricing-card-label--subscribe pricing-card-label--subscribe-featured">Most Popular &mdash; 20% OFF</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty featured-qty">3 BOTTLES</h3>
+                            <p class="pricing-supply">90-Day Supply</p>
+                            <div class="pricing-img-combo">
+                                <img src="images/jellythin-3.png" alt="JellyThin 3 Bottles" loading="lazy" class="pricing-img">
+                                <div class="combo-ebooks">
+                                    <div class="combo-ebooks-row">
+                                        <img src="images/bonus-keto-kickstart.png" alt="Bonus: The Keto Kickstart" loading="lazy">
+                                        <img src="images/bonus-jelly-diet.png" alt="Bonus: The Jelly Diet" loading="lazy">
+                                        <img src="images/bonus-metabolism-journey.png" alt="Bonus: The Metabolism Journey" loading="lazy">
+                                    </div>
+                                    <span class="combo-badge">+3 BONUS</span>
+                                </div>
+                            </div>
+                            <div class="pricing-price pricing-price--subscribe">
+                                <sup class="price-dollar">$</sup><span class="price-big">50</span>
+                                <span class="price-per">WITH SUBSCRIBE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> Biggest Discount</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 3 FREE Bonuses</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> FREE USA Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $150!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title pricing-buy-options-title--subscribe">Subscribe &amp; Save Monthly</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/5" class="btn-primary btn-subscribe-gold btn-block buy-link">SUBSCRIBE &amp; SAVE &#8594;</a>
+                                    <svg class="cursor-click-anim" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 9-6 1 4 8-3 1-4-8-5 4V3z" fill="#fff" stroke="#C49A1A" stroke-width="1.5"/></svg>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-card pricing-card--normal featured" aria-hidden="true">
+                        <div class="pricing-card-label featured-label">Most Popular</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty featured-qty">3 BOTTLES</h3>
+                            <p class="pricing-supply">90-Day Supply</p>
+                            <div class="pricing-img-combo">
+                                <img src="images/jellythin-3.png" alt="JellyThin 3 Bottles" loading="lazy" class="pricing-img">
+                                <div class="combo-ebooks">
+                                    <div class="combo-ebooks-row">
+                                        <img src="images/bonus-keto-kickstart.png" alt="Bonus: The Keto Kickstart" loading="lazy">
+                                        <img src="images/bonus-jelly-diet.png" alt="Bonus: The Jelly Diet" loading="lazy">
+                                        <img src="images/bonus-metabolism-journey.png" alt="Bonus: The Metabolism Journey" loading="lazy">
+                                    </div>
+                                    <span class="combo-badge">+3 BONUS</span>
+                                </div>
+                            </div>
+                            <div class="pricing-price">
+                                <sup class="price-dollar">$</sup><span class="price-big">59</span>
+                                <span class="price-per">PER BOTTLE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> Biggest Discount</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 3 FREE Bonuses</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> FREE USA Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $125!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title">One-Time Purchase</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/6" class="btn-primary btn-block btn-featured buy-link">BUY THREE BOTTLES &#8594;</a>
+                                    <svg class="cursor-click-anim" width="32" height="32" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 9-6 1 4 8-3 1-4-8-5 4V3z" fill="#fff" stroke="#AD182B" stroke-width="1.5"/></svg>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+
+                    <!-- 2 Bottles (Bundle) → jell2_fun_b3_wt -->
+                    <div class="pricing-flip-container">
+                        <button class="pricing-flip-btn" type="button" aria-label="Flip card">
+                            <span class="pricing-flip-btn-icon" aria-hidden="true">&#8634;</span>
+                            <span class="pricing-flip-btn-text">One-Time Offer</span>
+                        </button>
+                        <div class="pricing-card-flipper">
+                    <div class="pricing-card pricing-card--subscribe">
+                        <div class="pricing-card-label pricing-card-label--subscribe">Bundle &mdash; 20% OFF</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">2 BOTTLES</h3>
+                            <p class="pricing-supply">60-Day Supply</p>
+                            <img src="images/jellythin-2.png" alt="JellyThin 2 Bottles" loading="lazy" class="pricing-img">
+                            <div class="pricing-price pricing-price--subscribe">
+                                <sup class="price-dollar">$</sup><span class="price-big">67</span>
+                                <span class="price-per">WITH SUBSCRIBE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $52!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title pricing-buy-options-title--subscribe">Subscribe &amp; Save Monthly</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/3" class="btn-primary btn-subscribe-gold btn-block buy-link">SUBSCRIBE &amp; SAVE &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping pricing-bottom-shipping--free">FREE USA Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pricing-card pricing-card--normal" aria-hidden="true">
+                        <div class="pricing-card-label bundle-label">Bundle</div>
+                        <div class="pricing-card-inner">
+                            <h3 class="pricing-qty">2 BOTTLES</h3>
+                            <p class="pricing-supply">60-Day Supply</p>
+                            <img src="images/jellythin-2.png" alt="JellyThin 2 Bottles" loading="lazy" class="pricing-img">
+                            <div class="pricing-price">
+                                <sup class="price-dollar">$</sup><span class="price-big">79</span>
+                                <span class="price-per">PER BOTTLE</span>
+                            </div>
+                            <ul class="pricing-checks">
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> No Bonuses</li>
+                                <li class="check-disabled"><span class="x-icon">&#10007;</span> FREE Shipping</li>
+                                <li><svg class="check-icon" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"/></svg> 60-Day Guarantee</li>
+                            </ul>
+                            <p class="pricing-savings">You Save $52!</p>
+                            <div class="pricing-buy-options">
+                                <p class="pricing-buy-options-title">One-Time Purchase</p>
+                                <div class="pricing-buy-option">
+                                    <a href="https://lp.jellythin.online/click/4" class="btn-primary btn-block buy-link">BUY TWO BOTTLES &#8594;</a>
+                                </div>
+                            </div>
+                            <img src="images/cards.png" alt="Visa, Mastercard, American Express, Discover" class="pricing-cards-img" loading="lazy">
+                            <div class="pricing-bottom">
+                                <p class="pricing-bottom-shipping">+ Shipping</p>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- GUARANTEE (repeat before FAQ)               -->
+        <!-- ============================================ -->
+        <section class="guarantee-section">
+            <div class="container bdinpad">
+                <h2 class="guarantee-title">100% Satisfaction60-Day Money Back Guarantee</h2>
+                <div class="guarantee-content">
+                    <img src="images/60days.png" alt="60-Day 100% Money Back Guarantee" class="guarantee-badge-img" loading="lazy">
+                    <p class="guarantee-copy">Your order today is protected by our iron-clad 60-day <strong>100% money-back guarantee</strong>. If you're not thrilled with how your body feels after using <strong>JellyThin</strong> &mdash; or if you simply change your mind for any reason at all &mdash; let us know any time within the next <strong>60 days</strong> and we'll refund every single penny. No hoops, no questions asked.</p>
+                </div>
+                <img src="images/icons-fda.png" alt="GMP Quality, FDA Registered, Natural Ingredients, Made in USA, GMO Free" class="guarantee-fda-icons" loading="lazy">
+                <p class="guarantee-mfg"><strong>JellyThin is proudly manufactured in the USA</strong> with the finest of domestic and foreign ingredients.</p>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 12: FAQ                             -->
+        <!-- ============================================ -->
+        <section class="faq-section" id="faq-section">
+            <div class="container bdinpad">
+                <div class="faq-layout">
+                    <div class="faq-left">
+                        <h2>Frequently Asked Questions</h2>
+                        <div class="faq-bottle">
+                            <img src="images/jellythin.png" alt="JellyThin Bottle" loading="lazy" class="bottle">
+                            <img src="images/60days.png" alt="60-Day Money-Back Guarantee" loading="lazy" class="faq-seal">
+                        </div>
+                        <a href="#order-section" class="btn-primary btn-lg scroll-to-section faq-cta">BUY NOW &amp; SAVE <span class="faq-cta-arrow" aria-hidden="true">&rarr;</span></a>
+                    </div>
+                    <div class="faq-right">
+                        <div class="faq-accordion">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is JellyThin right for me?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>If you feel like your metabolism has quietly slowed down over the years, if afternoon energy dips have become a daily pattern, if cravings feel harder to manage than they used to, and if you're looking for a natural, gentle way to support your body's metabolic rhythms &mdash; JellyThin was designed with you in mind. It's formulated for adults 30+ who want a two-compound, gummy-format approach without harsh stimulants, crash diets, or complicated routines.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is JellyThin safe?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>JellyThin is made with natural, well-researched ingredients and is produced in a state-of-the-art facility in the United States. Every batch is quality-checked for consistency and purity. As with any new supplement, we always recommend consulting with your healthcare provider before starting &mdash; especially if you are pregnant, nursing, taking medication, or managing a medical condition.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How fast will I feel the difference?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Everybody responds on its own timeline. Some people notice gentler energy and fewer afternoon cravings with consistent daily use over 30+ days. Others experience more noticeable shifts after 60–90 days. Metabolism is a long game — consistency is what moves the needle. That's why our 3-bottle (90-day) supply is our most popular option.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What makes JellyThin different from other weight management supplements?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Most products focus on a single mechanism &mdash; appetite suppression, stimulant-driven thermogenesis, or a crash diet framework. JellyThin takes a paired-compound approach: <strong>Apple Cider Vinegar</strong> supports digestion, fullness, and blood sugar balance, while <strong>BHB salts</strong> support your body's own fat-for-fuel energy pathways. The gummy format also solves the two biggest problems with traditional ACV &mdash; the taste and the impact on tooth enamel.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What's the best way to take JellyThin?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Adults: take one (1) gummy daily, or as directed by your healthcare professional. We recommend taking it approximately <strong>30 minutes before your morning or afternoon meal with a full glass of water</strong>. Consistency matters more than perfection &mdash; take it at the same time each day and let your body settle into the rhythm.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Can I take JellyThin with other supplements or medications?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>JellyThin is made with natural ingredients, but we always recommend consulting your healthcare provider before combining it with other supplements or medications &mdash; especially blood sugar, blood pressure, or heart medications. This is standard practice for any new addition to your daily routine.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How many bottles should I order?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Metabolic shifts tend to be most noticeable after 60&ndash;90 days of consistent daily use, as your body settles into the new rhythm. That's why most customers (94% according to our internal data) choose the 3-bottle pack &mdash; it gives your body an uninterrupted 90-day runway, unlocks the 3 free bonuses, and includes free USA shipping.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is this a one-time payment?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes. JellyThin is a one-time purchase. No subscriptions, no hidden charges, no auto-renewals. What you order today is what you pay &mdash; nothing more.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is JellyThin available anywhere else?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To protect the quality and integrity of the formula, JellyThin is only available through this official page. You won't find it on Amazon, in retail stores, or through third-party sellers. Ordering here is the only way to ensure you're getting the authentic product with our 60-day guarantee.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What's your refund policy?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Your order is protected by our 60-day 100% money-back guarantee. If you're not thrilled with how you feel, or if you simply change your mind, contact our support team any time within 60 days of purchase and we'll refund every single penny &mdash; no hoops, no questionnaires, no hassle.</p>
+                                </div>
+                            </div>
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>What do I do now?</span>
+                                    <span class="faq-toggle">+</span>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Scroll up, choose the package that fits your goals, and click <strong>BUY NOW</strong>. You'll be taken to our secure checkout, your order will ship quickly from our USA fulfillment center, and your 3 free digital bonuses will be delivered to your email instantly (on the 3-bottle pack).</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 13: SUPPLEMENT FACTS LABEL          -->
+        <!-- ============================================ -->
+        <section class="references-section">
+            <div class="container bdinpad">
+                <img src="images/jellythin-label.jpg" alt="JellyThin Keto + ACV Gummies Supplement Facts label" loading="lazy" class="jellythin-label-img">
+            </div>
+        </section>
+
+        </div>
+        <!-- /VSL delay wrapper -->
+
+    </main>
+
+    <!-- ============================================ -->
+    <!-- SECTION 15: FOOTER                          -->
+    <!-- ============================================ -->
+    <footer class="footer">
+        <div class="container bdinpad">
+            <div class="footer-links">
+                <a href="./terms/">Terms</a>
+                <a href="./privacy/">Privacy</a>
+                <a href="./contact/">Refund</a>
+                <a href="./contact/">Shipping</a>
+                <a href="./contact/">Contact</a>
+            </div>
+
+            <p class="footer-disclaimer">
+                <strong>Statements found on this website have not been evaluated by the Food and Drug Administration.</strong>
+                Products on this website are not intended to diagnose, treat, cure, or prevent any disease.
+                If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using our products.
+            </p>
+
+            <p class="footer-disclaimer">
+                BuyGoods is the retailer of this product. BuyGoods is a registered trademark of BuyGoods, a Delaware corporation located at 1201 N Orange Street Suite #7223, Wilmington, DE, 19801, USA and used by permission. BuyGoods' role as retailer does not constitute an endorsement, approval or review of this product or any claim, statement or opinion used in promotion of this product. Statements on this website have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure or prevent any disease.
+            </p>
+
+            <p class="footer-copy" style="text-align: center;">© 2026 JellyThin &mdash; All Rights Reserved.</p>
+            <br>
+            <!-- Disclaimer obrigatório BuyGoods (account_id 12474) -->
+            <span id="disclaimer"></span>
+            <script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12557"></script>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/countdown.js"></script>
+
+    <!-- ============================================================= -->
+    <!-- VSL Delay: reveals .vsl-delayed elements after X seconds       -->
+    <!-- ============================================================= -->
+    <script>
+      (function () {
+        var DELAY_SECONDS = (typeof window.JellyThin_VSL_DELAY_SECONDS === 'number')
+          ? window.JellyThin_VSL_DELAY_SECONDS
+          : 1115; // default: ~18min35s — ajuste conforme duração da VSL
+
+        // Atalho de teste: abra a página com ?nodelay=1 para revelar na hora.
+        try {
+          if (/[?&]nodelay=1/.test(window.location.search)) DELAY_SECONDS = 0;
+        } catch (e) {}
+
+        var revealed = false;
+        function revealVSL() {
+          if (revealed) return;
+          revealed = true;
+
+          var delayed = document.querySelectorAll('.vsl-delayed');
+          for (var i = 0; i < delayed.length; i++) {
+            delayed[i].classList.add('revealed');
+          }
+
+          // Carrega os players de vídeo (vturb) só agora que estão visíveis,
+          // senão eles medem 0px de largura escondidos e renderizam quebrados.
+          var players = document.querySelectorAll('vturb-smartplayer[data-vturb-src]');
+          for (var p = 0; p < players.length; p++) {
+            var src = players[p].getAttribute('data-vturb-src');
+            players[p].removeAttribute('data-vturb-src');
+            var sc = document.createElement('script');
+            sc.type = 'text/javascript';
+            sc.src = src;
+            sc.async = true;
+            document.head.appendChild(sc);
+          }
+
+          // Garante que a vturb recalcule as dimensões agora que está visível.
+          setTimeout(function () {
+            window.dispatchEvent(new Event('resize'));
+          }, 50);
+
+          document.dispatchEvent(new CustomEvent('JellyThin:vsl-reveal'));
+        }
+
+        // Permite revelar manualmente pelo console: JellyThin_revealNow()
+        window.JellyThin_revealNow = revealVSL;
+
+        setTimeout(revealVSL, DELAY_SECONDS * 1000);
+      })();
+    </script>
+
+    <!-- ============================================================= -->
+    <!-- Buy-link tracker: anexa sessid2 + URL params no click          -->
+    <!-- ============================================================= -->
+    <script>
+      (function () {
+        function lerCookie(nome) {
+          var partes = document.cookie.split(/;\s*/);
+          for (var i = 0; i < partes.length; i++) {
+            if (partes[i].indexOf(nome + "=") === 0) {
+              return partes[i].substring(nome.length + 1);
+            }
+          }
+          return "";
+        }
+
+        document.addEventListener("click", function (e) {
+          var btn = e.target.closest("a.buy-link");
+          if (!btn) return;
+
+          e.preventDefault();
+
+          var url = btn.getAttribute("href");
+          var sessid = lerCookie("sessid2");
+          var paramsUrl = window.location.search.replace(/^\?/, "");
+
+          var extras = [];
+          if (sessid) extras.push("s=" + encodeURIComponent(sessid));
+          if (paramsUrl) extras.push(paramsUrl);
+
+          if (extras.length) {
+            url += (url.indexOf("?") > -1 ? "&" : "?") + extras.join("&");
+          }
+
+          window.location.href = url;
+        });
+      })();
+    </script>
+
+</body>
+</html>

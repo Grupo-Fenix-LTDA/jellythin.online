@@ -1,0 +1,63 @@
+/* ==========================================================================
+   JellyThin Design System - CSS Custom Properties
+   Palette: red primary #AD182B · rose #CC2B4D · light pink #FFE4DF
+            mauve #BB528C · white #FFFFFF · dark text #1A1A1A
+   ========================================================================== */
+
+:root {
+  /* ---- Core Brand Palette (JellyThin) ---- */
+  --color-page: #FFFFFF;              /* page background */
+  --color-cream: #FFE4DF;             /* alt section background (light pink) */
+  --color-water-green: #FFE4DF;       /* light background (light pink) */
+  --color-dark-teal: #AD182B;         /* dark section background (red primary) */
+  --color-text: #1A1A1A;              /* body text (dark) */
+  --color-text-alt: #1A1A1A;          /* body text 2 */
+  --color-accent: #BB528C;            /* mauve accent */
+  --color-accent-2: #CC2B4D;          /* rose secondary */
+  --color-cta: #AD182B;               /* primary CTA (red primary) */
+  --color-cta-hover: #CC2B4D;         /* CTA hover (rose) */
+  --color-pure-white: #FFFFFF;
+  --color-off-white: #FFE4DF;
+  --color-muted: #C5CBD5;
+
+  /* ---- Legacy tokens (mapped to new palette so existing rules don't break) ---- */
+  --color-deep-indigo: var(--color-text);
+  --color-royal-purple: var(--color-accent);
+  --color-soft-lavender: var(--color-water-green);
+  --color-pearl-silver: var(--color-muted);
+
+  /* ---- Gradients ---- */
+  --gradient-hero: linear-gradient(135deg, #AD182B 0%, #CC2B4D 100%);
+  --gradient-highlight: linear-gradient(to right, #BB528C, #CC2B4D);
+  --gradient-cta: linear-gradient(135deg, #CC2B4D, #AD182B);
+
+  /* ---- Typography ---- */
+  --font-family: "Inter", sans-serif;
+
+  /* ---- Layout ---- */
+  --container-width: 1170px;
+  --section-padding: 60px 0;
+
+  /* ---- Buttons ---- */
+  --btn-bg: var(--color-cta);
+  --btn-text: var(--color-pure-white);
+  --btn-radius: 6px;
+
+  /* ---- Spacing Tokens ---- */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-30: 30px;
+  --space-40: 40px;
+  --space-50: 50px;
+  --space-60: 60px;
+  --space-80: 80px;
+}
+
+body {
+  background: var(--color-page);
+  color: var(--color-text);
+}
