@@ -1,0 +1,1568 @@
+/* ==========================================================================
+   JoinTrix - Reusable Component Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   HEADER / NAVIGATION
+   ========================================================================== */
+
+.header {
+  padding: 13px 0;
+  background: var(--color-pure-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--color-muted);
+  transition: box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  box-shadow: 0 2px 12px rgba(26, 26, 26, 0.08);
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+  display: block;
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: #AD182B;
+  font-weight: 800;
+  font-size: 28px;
+  text-decoration: none;
+  line-height: 40px;
+  flex-shrink: 0;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: #BB528C;
+}
+
+ul.menu {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+}
+
+ul.menu li {
+  display: inline-block;
+  padding: 0 17px;
+  font-size: 18px;
+  line-height: 40px;
+  color: var(--color-deep-indigo);
+  position: relative;
+}
+
+ul.menu li a {
+  color: var(--color-deep-indigo);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+ul.menu li a:hover {
+  color: var(--color-royal-purple);
+}
+
+ul.menu li::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: var(--color-pearl-silver);
+}
+
+ul.menu li:nth-last-child(2)::after,
+ul.menu li:last-child::after {
+  display: none;
+}
+
+ul.menu li:last-child {
+  padding: 0;
+  margin-left: 8px;
+}
+
+ul.menu li:last-child a {
+  display: inline-block;
+  background: var(--color-cta);
+  color: var(--color-pure-white);
+  font-weight: 700;
+  font-size: 16px;
+  padding: 8px 22px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  transition: background 0.3s;
+  box-shadow: none;
+  line-height: 24px;
+}
+
+ul.menu li:last-child a:hover {
+  background: var(--color-cta-hover);
+  color: var(--color-pure-white);
+}
+
+/* Hamburger Menu Toggle */
+#menu-wrapper {
+  cursor: pointer;
+  margin-left: auto;
+}
+
+#hamburger-menu {
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+}
+
+#hamburger-menu span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: var(--color-text);
+  border-radius: 3px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+#hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+
+#hamburger-menu span:nth-child(2) {
+  top: 10px;
+}
+
+#hamburger-menu span:nth-child(3) {
+  top: 20px;
+}
+
+#hamburger-menu.open span:nth-child(1) {
+  top: 10px;
+  transform: rotate(45deg);
+}
+
+#hamburger-menu.open span:nth-child(2) {
+  opacity: 0;
+}
+
+#hamburger-menu.open span:nth-child(3) {
+  top: 10px;
+  transform: rotate(-45deg);
+}
+
+/* Mobile Menu */
+#menu-container {
+  position: static;
+}
+
+#menu-container .menu-list {
+  position: absolute;
+  left: -100%;
+  top: 100%;
+  width: 100%;
+  background: var(--color-dark-teal);
+  z-index: 999;
+  transition: left 0.3s ease;
+  padding: 10px 0;
+}
+
+.menu-list.active {
+  left: 0;
+}
+
+.menu-list li {
+  display: block;
+  padding: 0;
+}
+
+.menu-list li a {
+  display: block;
+  color: var(--color-pure-white);
+  font-size: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.menu-list li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
+.btn-primary {
+  display: inline-block;
+  background: var(--color-cta);
+  color: var(--color-pure-white);
+  padding: 16px 40px;
+  font-size: 16px;
+  font-weight: 800;
+  border-radius: var(--btn-radius);
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+  border: none;
+  text-decoration: none;
+  transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
+  box-shadow: 0 5px 0 #7d1020;
+  font-family: var(--font-family);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background: var(--color-cta-hover);
+  box-shadow: 0 5px 0 #7d1020, 0 8px 24px rgba(173, 24, 43, 0.3);
+  transform: scale(1.045);
+}
+
+.btn-primary:active {
+  box-shadow: 0 2px 0 #7d1020;
+  transform: translateY(3px);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn-lg {
+  padding: 18px 50px;
+  font-size: 22px;
+}
+
+/* ==========================================================================
+   PRICING CARDS
+   ========================================================================== */
+
+.pricing-card {
+  background: #fff;
+  border: 2px solid #ddd;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(90, 138, 140, 0.22);
+  border-color: var(--color-accent);
+}
+
+.pricing-card.float-effect {
+  animation: bottleFloat 4s ease-in-out infinite;
+}
+
+@keyframes bottleFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+.pricing-card:hover .pricing-img {
+  transform: scale(1.04);
+}
+
+.pricing-img {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pricing-card.featured {
+  border: 3px solid var(--color-cta);
+  border-radius: 16px;
+  z-index: 2;
+  box-shadow:
+    0 10px 40px rgba(26, 26, 26, 0.22),
+    0 0 0 4px rgba(173, 24, 43, 0.22);
+  animation: featuredPulse 2.2s ease-in-out infinite;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+@keyframes featuredPulse {
+  0%, 100% {
+    box-shadow:
+      0 10px 40px rgba(26, 26, 26, 0.22),
+      0 0 0 4px rgba(173, 24, 43, 0.22);
+  }
+  50% {
+    box-shadow:
+      0 12px 50px rgba(26, 26, 26, 0.28),
+      0 0 0 8px rgba(173, 24, 43, 0.35),
+      0 0 30px rgba(173, 24, 43, 0.25);
+  }
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-8px);
+  box-shadow:
+    0 20px 50px rgba(173, 24, 43, 0.28),
+    0 0 0 6px rgba(173, 24, 43, 0.38),
+    0 0 30px rgba(173, 24, 43, 0.25);
+  border-color: var(--color-cta-hover);
+  animation: none;
+}
+
+.pricing-card-label {
+  background: #BB528C;
+  color: #fff;
+  text-align: center;
+  padding: 12px 0;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.pricing-card-label.bundle-label {
+  background: #AD182B;
+  color: #fff;
+}
+
+.pricing-card-label.featured-label {
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 14px;
+  padding: 14px 0;
+  letter-spacing: 2px;
+}
+
+.pricing-card-inner {
+  padding: 24px 22px 25px;
+  text-align: center;
+}
+
+.pricing-qty {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--color-text);
+  margin-bottom: 2px;
+}
+
+.pricing-qty.featured-qty {
+  color: var(--color-text);
+  font-size: 32px;
+}
+
+.pricing-supply {
+  font-size: 14px;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.pricing-img {
+  max-width: 100%;
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin: 15px auto;
+  display: block;
+}
+
+.pricing-card.featured .pricing-img {
+  height: 160px;
+}
+
+.pricing-price {
+  margin: 10px 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+}
+
+.price-dollar {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.price-big {
+  font-size: 52px;
+  font-weight: 900;
+  color: var(--color-text);
+  line-height: 1;
+}
+
+.price-per {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  line-height: 1.3;
+  align-self: center;
+  font-weight: 500;
+}
+
+.pricing-subscribe {
+  margin: 8px 0 12px;
+  text-align: center;
+  padding: 6px 0 4px;
+}
+
+.pricing-subscribe .subscribe-or {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 0 0 4px;
+}
+
+.subscribe-price-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 4px;
+  line-height: 1;
+}
+
+.subscribe-dollar {
+  font-size: 28px;
+  font-weight: 800;
+  color: #AD182B;
+  line-height: 1.3;
+}
+
+.pricing-subscribe .subscribe-price {
+  font-size: 72px;
+  font-weight: 900;
+  color: #AD182B;
+  line-height: 1;
+}
+
+.subscribe-per {
+  font-size: 13px;
+  color: #AD182B;
+  text-align: left;
+  line-height: 1.3;
+  align-self: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Two purchase options block (one-time vs subscribe) */
+.pricing-buy-options {
+  margin: 14px 0 10px;
+}
+
+.pricing-buy-options-title {
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-cta);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+
+.pricing-buy-option {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.pricing-buy-option-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.pricing-buy-option-label--save {
+  color: #AD182B;
+}
+
+.pricing-buy-divider {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.pricing-buy-divider::before,
+.pricing-buy-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.pricing-buy-divider span {
+  padding: 0 12px;
+  font-size: 11px;
+  font-weight: 800;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pricing-savings {
+  color: #AD182B;
+  font-weight: 800;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.pricing-checks {
+  margin: 16px auto;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  border-top: 1px solid #eee;
+}
+
+.pricing-checks li {
+  font-size: 14px;
+  line-height: 1.3;
+  color: #333;
+  padding: 10px 0;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: none;
+  border-bottom: 1px solid #eee;
+  border-radius: 0;
+}
+
+.pricing-checks li:nth-child(2),
+.pricing-checks li:nth-child(3),
+.pricing-checks li:nth-child(4),
+.pricing-checks li:nth-child(5) {
+  background: none;
+}
+
+svg.check-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  fill: var(--color-accent-2);
+}
+
+.check-disabled {
+  color: #aaa;
+  text-decoration: line-through;
+  opacity: 0.55;
+}
+
+.x-icon {
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  display: inline;
+  color: #AD182B;
+}
+
+/* Pricing card CTA buttons — teal for 1 & 3 bottles */
+.pricing-card .btn-primary {
+  background: linear-gradient(135deg, #AD182B, #CC2B4D);
+  color: #fff;
+  box-shadow: 0 5px 0 #BB528C;
+  border-radius: 8px;
+}
+
+.pricing-card .btn-primary:hover {
+  background: linear-gradient(135deg, #d30275, #BB528C);
+  box-shadow: 0 5px 0 #AD182B, 0 8px 24px rgba(90, 138, 140, 0.35);
+  color: #fff;
+}
+
+.pricing-card .btn-primary:active {
+  box-shadow: 0 2px 0 #AD182B;
+}
+
+/* Featured card CTA — red gradient for 6 bottles */
+.pricing-card.featured .btn-primary {
+  background: linear-gradient(135deg, #CC2B4D, #AD182B);
+  color: #fff;
+  box-shadow: 0 5px 0 #7d1020;
+}
+
+.pricing-card.featured .btn-primary:hover {
+  background: linear-gradient(135deg, #D33758, #BF1F35);
+  box-shadow: 0 5px 0 #7d1020, 0 8px 24px rgba(173, 24, 43, 0.35);
+  color: #fff;
+}
+
+.pricing-card.featured .btn-primary:active {
+  box-shadow: 0 2px 0 #7d1020;
+}
+
+.pricing-btn-wrapper {
+  position: relative;
+  margin-top: 5px;
+}
+
+.pricing-card .btn-primary ~ .btn-primary,
+.pricing-card .buy-link ~ .buy-link,
+.pricing-btn-wrapper .btn-primary ~ .btn-primary {
+  margin-top: 0 !important;
+  background: linear-gradient(135deg, #FFE066 0%, #FFC107 50%, #D4A017 100%) !important;
+  color: #3a2800 !important;
+  box-shadow: 0 5px 0 #A07800 !important;
+}
+
+.pricing-card .btn-primary ~ .btn-primary:hover,
+.pricing-card .buy-link ~ .buy-link:hover,
+.pricing-btn-wrapper .btn-primary ~ .btn-primary:hover {
+  background: linear-gradient(135deg, #FFD93D 0%, #E6A800 50%, #B8860B 100%) !important;
+  box-shadow: 0 5px 0 #A07800, 0 8px 24px rgba(212, 160, 23, 0.35) !important;
+  color: #3a2800 !important;
+}
+
+.pricing-card .btn-primary ~ .btn-primary:active,
+.pricing-card .buy-link ~ .buy-link:active,
+.pricing-btn-wrapper .btn-primary ~ .btn-primary:active {
+  box-shadow: 0 2px 0 #A07800 !important;
+}
+
+.btn-featured {
+  font-size: 20px;
+  padding: 18px 20px;
+}
+
+/* Cursor lives inside .pricing-buy-option (which becomes the positioning root) */
+.pricing-buy-option {
+  position: relative;
+}
+
+.pricing-buy-option:has(> .cursor-click-anim) {
+  padding-bottom: 42px;
+}
+
+.cursor-click-anim {
+  position: absolute;
+  left: 50%;
+  bottom: 4px;
+  margin-left: -16px;
+  pointer-events: none;
+  animation: cursorClick 1.6s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes cursorClick {
+  0%, 100% { transform: rotate(45deg) translate(0, 0) scale(1); }
+  40%      { transform: rotate(45deg) translate(0, -8px) scale(1.08); }
+  50%      { transform: rotate(45deg) translate(0, -4px) scale(0.92); }
+  60%      { transform: rotate(45deg) translate(0, -8px) scale(1.08); }
+}
+
+/* Product image + bonus ebooks — product-shot composition */
+.pricing-img-combo {
+  position: relative;
+  margin: 15px auto 0;
+  width: 100%;
+  min-height: 180px;
+}
+
+.pricing-img-combo .pricing-img {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  height: 170px;
+}
+
+.combo-ebooks {
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.combo-ebooks-row {
+  display: flex;
+  gap: 0;
+}
+
+.combo-ebooks-row img:last-child {
+  margin-left: -8px;
+}
+
+.combo-ebooks img {
+  display: block;
+  height: 55px;
+  width: auto;
+}
+
+.combo-badge {
+  display: inline-block;
+  margin-top: -6px;
+  padding: 3px 12px;
+  background: var(--color-cta);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(173, 24, 43, 0.35);
+}
+
+.pricing-cards-img {
+  display: block;
+  max-width: 170px;
+  height: auto;
+  margin: 12px auto 0;
+}
+
+.pricing-bottom {
+  margin-top: 15px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.pricing-bottom-retail {
+  font-size: 16px;
+  color: #999;
+}
+
+.pricing-bottom-total {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--color-text);
+}
+
+.pricing-bottom-shipping {
+  font-size: 13px;
+  color: #999;
+  margin-top: 2px;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: #AD182B;
+}
+
+/* ==========================================================================
+   TRUST ICONS
+   ========================================================================== */
+
+.trust-icons-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px 0;
+}
+
+.trust-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* ==========================================================================
+   TESTIMONIAL CARDS
+   ========================================================================== */
+
+.testimonial-card {
+  background: var(--color-pure-white);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-stars {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 26px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.testimonial-name {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-deep-indigo);
+}
+
+.testimonial-verified {
+  color: #11b142;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* ==========================================================================
+   FAQ ACCORDION
+   ========================================================================== */
+
+.faq-item {
+  border: 2px solid var(--color-pearl-silver);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 18px 50px 18px 20px;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+  font-size: 18px;
+  background: var(--color-off-white);
+  border: none;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  color: var(--color-deep-indigo);
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #ececf0;
+}
+
+.faq-toggle {
+  font-size: 24px;
+  font-weight: 400;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.faq-question.active .faq-toggle {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+}
+
+.faq-answer p {
+  padding: 0 20px 20px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #555;
+}
+
+/* ==========================================================================
+   GUARANTEE SEAL & BADGES
+   ========================================================================== */
+
+.guarantee-seal {
+  flex-shrink: 0;
+}
+
+.seal-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--color-royal-purple);
+  color: var(--color-pure-white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.seal-days {
+  font-size: 36px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.seal-text {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.seal-sub {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.guarantee-badges {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.guarantee-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--color-deep-indigo);
+}
+
+/* ==========================================================================
+   CLAIM CTA STRIP
+   ========================================================================== */
+
+.claim-strip {
+  background: #CC2B4D;
+  padding: 35px 0 24px;
+  text-align: center;
+  color: var(--color-pure-white);
+}
+
+.claim-strip-heading {
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 50px;
+  color: var(--color-pure-white);
+}
+
+.claim-strip-sub {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-water-green);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+/* ==========================================================================
+   COUNTDOWN TIMER (SOP: below VSL headline, 20 min regressive)
+   ========================================================================== */
+
+.vsl-offer-headline {
+  color: #fff;
+  text-align: center;
+  padding: 20px 18px 16px;
+  margin: 28px auto 0;
+  max-width: 900px;
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(26, 26, 26, 0.18);
+}
+
+.vsl-offer-headline h3 {
+  font-size: 24px;
+  font-weight: 900;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.4px;
+}
+
+.vsl-countdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+.vsl-countdown .stopwatch {
+  font-size: 26px;
+  font-family: "Inter", monospace;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.vsl-countdown .claim-act-text {
+  display: none;
+  color: var(--color-cta);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.vsl-countdown-label {
+  font-size: 13px;
+  color: var(--color-water-green);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+}
+
+/* VSL Delay: hidden until delay fires */
+.vsl-delayed {
+  display: none;
+}
+
+.vsl-delayed.revealed {
+  display: block;
+  animation: vslReveal 0.5s ease-out;
+}
+
+@keyframes vslReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+
+.footer {
+  background: #AD182B;
+  padding: 40px 0;
+  color: var(--color-pure-white);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 56px;
+  margin-bottom: 20px;
+}
+
+.footer-links a {
+  color: var(--color-water-green);
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--color-pure-white);
+}
+
+.footer-disclaimer,
+.footer-shellfish,
+.footer-bg {
+  text-align: left;
+  font-size: 12px;
+  color: var(--color-water-green);
+  line-height: 20px;
+  max-width: 100%;
+  margin: 0 auto 14px;
+}
+
+.footer-shellfish {
+  text-align: center;
+  font-weight: 700;
+  color: #fff;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--color-cta);
+  margin-bottom: 18px;
+}
+
+.footer-copyright {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.footer-disclaimer {
+  text-align: left;
+  font-size: 12px;
+  color: var(--color-pearl-silver);
+  line-height: 20px;
+  max-width: 100%;
+  margin: 0 auto 15px;
+}
+
+.footer-contact {
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-pearl-silver);
+}
+
+.footer-contact a {
+  color: var(--color-soft-lavender);
+}
+
+/* ==========================================================================
+   BuyGoods disclaimer overflow fix
+   Desktop: keep BuyGoods default layout (200px logo + flex:1 1 500px text).
+   Mobile (<=768px): wrap the flex so it doesn't trigger horizontal scroll
+   on narrow viewports.
+   ========================================================================== */
+#disclaimer {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  #disclaimer,
+  #disclaimer * {
+    box-sizing: border-box;
+    max-width: 100% !important;
+  }
+  #disclaimer > div > div {
+    flex-wrap: wrap !important;
+  }
+  #disclaimer > div > div > div {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+}
+
+/* ==========================================================================
+   PRICING CARD FLIP (front = Subscribe / gold, back = Normal one-time / red)
+   ========================================================================== */
+
+.pricing-flip-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  perspective: 1800px;
+  -webkit-perspective: 1800px;
+}
+
+/* "One-Time Offer / View Special Offer" flip button (above each card) */
+.pricing-flip-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  margin: 0 auto;
+  padding: 16px 40px;
+  border: none;
+  border-radius: 999px;
+  /* DEFAULT (before flip) = GOLD */
+  background: linear-gradient(135deg, #F2C744 0%, #D9A82E 100%);
+  color: #1A1A1A;
+  font-family: var(--font-family);
+  font-size: 17px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(192, 144, 16, 0.42);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.35s ease,
+    color 0.35s ease;
+}
+
+.pricing-flip-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(192, 144, 16, 0.52);
+}
+
+.pricing-flip-btn:active {
+  transform: translateY(0);
+}
+
+/* AFTER flip = RED */
+.pricing-flip-container.is-flipped .pricing-flip-btn {
+  background: linear-gradient(135deg, #CC2B4D 0%, #AD182B 100%);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(173, 24, 43, 0.42);
+}
+
+.pricing-flip-container.is-flipped .pricing-flip-btn:hover {
+  box-shadow: 0 12px 26px rgba(173, 24, 43, 0.52);
+}
+
+/* Sweeping light beam */
+.pricing-flip-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.7) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-22deg);
+  animation: flipBtnShine 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes flipBtnShine {
+  0% {
+    left: -150%;
+  }
+  55%,
+  100% {
+    left: 150%;
+  }
+}
+
+/* Keep label + icon above the beam */
+.pricing-flip-btn-icon,
+.pricing-flip-btn-text {
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-flip-btn-icon {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.4s ease;
+}
+
+.pricing-flip-container.is-flipped .pricing-flip-btn-icon {
+  transform: rotate(-180deg);
+}
+
+/* Outside label above each card — bigger, black */
+.pricing-item-label {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  margin: 0 0 4px;
+}
+
+.pricing-flip-container--featured .pricing-item-label {
+  font-size: 34px;
+}
+
+/* Flipper (3D stack) */
+.pricing-card-flipper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 0.85s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.pricing-card-flipper > .pricing-card {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Back card (Normal one-time) starts rotated 180deg */
+.pricing-card-flipper > .pricing-card.pricing-card--normal {
+  transform: rotateY(180deg);
+}
+
+.pricing-card-flipper > .pricing-card.pricing-card--normal:hover {
+  transform: rotateY(180deg) translateY(-6px);
+}
+
+/* Only the currently visible face captures pointer events */
+.pricing-flip-container:not(.is-flipped)
+  .pricing-card-flipper > .pricing-card.pricing-card--normal {
+  pointer-events: none;
+}
+
+.pricing-flip-container.is-flipped
+  .pricing-card-flipper > .pricing-card.pricing-card--subscribe {
+  pointer-events: none;
+}
+
+.pricing-flip-container.is-flipped .pricing-card-flipper {
+  transform: rotateY(180deg);
+}
+
+/* --- SUBSCRIBE front card (gold / yellow accent) --- */
+.pricing-card.pricing-card--subscribe {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 213, 79, 0.55) 0%,
+    rgba(255, 232, 145, 0.30) 45%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  border: 2px solid #F2C744;
+  box-shadow: 0 8px 24px rgba(242, 199, 68, 0.22);
+  animation: none;
+}
+
+.pricing-card.pricing-card--subscribe:hover {
+  border-color: #E0B431;
+  box-shadow: 0 14px 36px rgba(242, 199, 68, 0.35);
+}
+
+.pricing-card.pricing-card--subscribe-featured {
+  border: 3px solid #E0B431;
+  box-shadow:
+    0 10px 40px rgba(192, 144, 16, 0.25),
+    0 0 0 4px rgba(242, 199, 68, 0.30);
+  animation: subscribePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes subscribePulse {
+  0%, 100% {
+    box-shadow:
+      0 10px 40px rgba(192, 144, 16, 0.25),
+      0 0 0 4px rgba(242, 199, 68, 0.30);
+  }
+  50% {
+    box-shadow:
+      0 12px 50px rgba(192, 144, 16, 0.32),
+      0 0 0 8px rgba(242, 199, 68, 0.45),
+      0 0 30px rgba(242, 199, 68, 0.30);
+  }
+}
+
+.pricing-card.pricing-card--subscribe-featured:hover {
+  animation: none;
+  box-shadow:
+    0 20px 50px rgba(192, 144, 16, 0.32),
+    0 0 0 6px rgba(242, 199, 68, 0.50);
+}
+
+/* Gold label badge at top of subscribe card */
+.pricing-card-label.pricing-card-label--subscribe {
+  background: linear-gradient(to right, #F2C744, #E0B431);
+  color: #1A1A1A;
+  letter-spacing: 1.2px;
+}
+
+.pricing-card-label.pricing-card-label--subscribe-featured {
+  background: linear-gradient(to right, #F2C744, #D9A82E);
+  font-size: 15px;
+  padding: 14px 0;
+  letter-spacing: 1.8px;
+}
+
+/* Subscribe price block tweaks */
+.pricing-price.pricing-price--subscribe .price-per {
+  color: #8a6a14;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+/* "Subscribe & Save Monthly" option title — gold */
+.pricing-buy-options-title.pricing-buy-options-title--subscribe {
+  color: #8a6a14;
+}
+
+/* Gold subscribe button */
+.pricing-card .btn-primary.btn-subscribe-gold {
+  background: linear-gradient(135deg, #F2C744 0%, #D9A82E 100%);
+  color: #1A1A1A;
+  border: none;
+  text-shadow: none;
+  font-weight: 800;
+  box-shadow: 0 5px 0 #A07800;
+}
+
+.pricing-card .btn-primary.btn-subscribe-gold:hover {
+  background: linear-gradient(135deg, #E0B431 0%, #C49A1A 100%);
+  color: #1A1A1A;
+  box-shadow: 0 8px 18px rgba(192, 144, 16, 0.4);
+}
+
+.pricing-card .btn-primary.btn-subscribe-gold:active {
+  background: #C49A1A;
+}
+
+/* Normal one-time card (back face) — buy button also gold to match */
+.pricing-card.pricing-card--normal .btn-primary.buy-link {
+  background: linear-gradient(135deg, #F2C744 0%, #D9A82E 100%);
+  color: #1A1A1A;
+  border: none;
+  text-shadow: none;
+  font-weight: 800;
+  box-shadow: 0 5px 0 #A07800;
+}
+
+.pricing-card.pricing-card--normal .btn-primary.buy-link:hover {
+  background: linear-gradient(135deg, #E0B431 0%, #C49A1A 100%);
+  color: #1A1A1A;
+  box-shadow: 0 8px 18px rgba(192, 144, 16, 0.4);
+}
+
+.pricing-card.pricing-card--normal .btn-primary.buy-link:active {
+  background: #C49A1A;
+  box-shadow: 0 3px 0 #A07800;
+}
+
+/* BONUS divider — horizontal lines with "BONUS" centered */
+.pricing-bonus-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 0 12px;
+  color: #8a6a14;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pricing-bonus-divider::before,
+.pricing-bonus-divider::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+}
+
+.pricing-bonus-divider span {
+  flex: 0 0 auto;
+}
+
+/* Normal-card variant of the BONUS divider — keep typography, change tint */
+.pricing-card--normal .pricing-bonus-divider {
+  color: #666;
+}
+
+/* Single-line bonus note (for 1 & 2 bottle) */
+.pricing-bonus-note {
+  font-size: 14px;
+  color: #444;
+  margin: 0 0 6px;
+  text-align: center;
+}
+
+/* 3-bottle bonus list (3 ebook thumbnails) */
+.pricing-bonus-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 4px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.pricing-bonus-list li {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.pricing-bonus-list li img {
+  width: 100%;
+  max-width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* "FREE USA Shipping" bottom shipping (gold/free accent) */
+.pricing-bottom-shipping.pricing-bottom-shipping--free {
+  color: #8a6a14;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.pricing-card--normal .pricing-bottom-shipping.pricing-bottom-shipping--free {
+  color: var(--color-accent-2);
+}
+
+/* --- NORMAL (back) one-time card --- uses default .pricing-card / .featured */
+.pricing-card.pricing-card--normal {
+  /* Default red border/background already comes from .pricing-card */
+}
+
+/* --- Offer toggle (segmented Subscribe / One-Time switch above the card) --- */
+.offer-toggle {
+  position: relative;
+  align-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  max-width: 320px;
+  padding: 6px;
+  background: #EFE7D2;
+  border: 1px solid #E0D3AC;
+  border-radius: 999px;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* The sliding highlight that sits behind the active option */
+.offer-toggle-slider {
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 6px;
+  width: calc(50% - 6px);
+  border-radius: 999px;
+  background: linear-gradient(135deg, #F2C744 0%, #E0B431 100%);
+  box-shadow: 0 4px 12px rgba(192, 144, 16, 0.45);
+  transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1), background 0.4s ease;
+  z-index: 0;
+}
+
+.offer-toggle.show-normal .offer-toggle-slider {
+  transform: translateX(100%);
+  background: linear-gradient(135deg, #C81F36 0%, #AD182B 100%);
+  box-shadow: 0 4px 12px rgba(173, 24, 43, 0.45);
+}
+
+.offer-toggle-opt {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 14px 10px;
+  font-family: var(--font-family);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  color: #8A7B55;
+  border-radius: 999px;
+  transition: color 0.3s ease;
+}
+
+.offer-toggle-opt.is-active {
+  color: #1A1A1A;
+}
+
+.offer-toggle.show-normal .offer-toggle-opt[data-offer="normal"].is-active {
+  color: #fff;
+}
