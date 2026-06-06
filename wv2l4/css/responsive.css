@@ -1,0 +1,705 @@
+/* ==========================================================================
+   JoinTrix - Responsive Breakpoints
+   ========================================================================== */
+
+/* ==========================================================================
+   MAX-WIDTH: 1200px
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .bdinpad {
+    padding: 0 28px;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 48px;
+    line-height: 58px;
+  }
+
+  .hero-subheading {
+    font-size: 22px;
+  }
+
+  /* Product intro */
+  .product-intro-name {
+    font-size: 48px;
+  }
+
+  .product-intro-image {
+    flex: 0 0 250px;
+  }
+}
+
+/* ==========================================================================
+   MAX-WIDTH: 1030px (Tablet)
+   ========================================================================== */
+
+@media (max-width: 1030px) {
+  .container {
+    max-width: 750px;
+  }
+
+  /* Hide desktop menu, show hamburger */
+  .hide-1030 {
+    display: none !important;
+  }
+
+  .show-1030 {
+    display: block !important;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+
+  .hero-subheading {
+    font-size: 20px;
+  }
+
+  /* Pricing stack — Mobile order: 6 bottles first, then 3, then 1 */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .pricing-grid .pricing-card:nth-child(1) { order: 3; } /* 1 bottle last */
+  .pricing-grid .pricing-card:nth-child(2) { order: 1; } /* 6 bottles first */
+  .pricing-grid .pricing-card:nth-child(3) { order: 2; } /* 3 bottles second */
+
+  /* Ingredients 2-col (grid) */
+  .ingredients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Bonuses 2-col on tablet */
+  .bonuses-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Testimonials */
+  .testimonials-section h2 {
+    font-size: 30px;
+  }
+
+  .testi-card {
+    padding: 28px 22px;
+  }
+
+  .testi-photo {
+    width: 150px;
+    margin-left: 20px;
+  }
+
+  .testi-polaroids .polaroid {
+    width: 160px;
+    height: 180px;
+  }
+
+  /* FAQ */
+  .faq-layout {
+    flex-direction: column;
+  }
+
+  .faq-left {
+    display: contents;
+  }
+
+  .faq-left h2 {
+    order: 1;
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+  }
+
+  .faq-right {
+    order: 2;
+    margin-bottom: 32px;
+  }
+
+  .faq-bottle {
+    order: 3;
+    max-width: 300px;
+    margin: 0 auto 24px;
+  }
+
+  .faq-seal {
+    width: 140px;
+    top: 14px;
+    right: -10px;
+  }
+
+  .faq-cta {
+    order: 4;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  /* Product intro */
+  .product-intro-content {
+    text-align: center;
+  }
+
+  .product-intro-text {
+    max-width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .product-intro-bottle {
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    width: 280px;
+    margin: 40px auto 0;
+  }
+
+  .product-intro-bottle .bottle {
+    transform: rotate(-8deg);
+    filter:
+      drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 40px rgba(160, 110, 240, 0.3));
+  }
+
+  .product-intro-seal {
+    width: 110px;
+    top: 10px;
+    left: -10px;
+    transform: rotate(-12deg);
+  }
+
+  .product-intro-section {
+    padding: 60px 0 70px;
+  }
+
+  .product-intro-section::after {
+    width: 380px;
+    height: 380px;
+    right: -120px;
+  }
+
+  /* Button adjustments */
+  .btn-primary {
+    font-size: 18px;
+    padding: 14px 30px;
+  }
+
+  /* FAQ question */
+  .faq-question {
+    font-size: 17px;
+  }
+
+  /* Claim strip */
+  .claim-strip-heading {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .claim-strip-sub {
+    font-size: 16px;
+  }
+}
+
+/* ==========================================================================
+   MAX-WIDTH: 767px (Mobile landscape / small tablet)
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  /* Testimonials */
+  .testimonials-section h2 {
+    font-size: 28px;
+  }
+
+  .testi-card {
+    padding: 26px 18px;
+  }
+
+  .testi-photo {
+    width: 130px;
+    margin: 0 -4px 10px 18px;
+  }
+
+  .testi-title {
+    font-size: 22px;
+  }
+
+  .testi-quote {
+    font-size: 18px;
+  }
+
+  .testi-polaroids .polaroid {
+    width: 140px;
+    height: 160px;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 640px;
+    padding: 0 15px;
+  }
+
+  .bdinpad {
+    padding: 0 12px;
+  }
+
+  /* Hide/show utilities */
+  .hide-767 {
+    display: none !important;
+  }
+
+  .show-767 {
+    display: block !important;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
+  .hero-subheading {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100%;
+  }
+
+  .hero-right {
+    margin-top: 20px;
+  }
+
+  .hero-card-header {
+    font-size: 24px;
+  }
+
+  .hero-testimonials {
+    flex-direction: column;
+  }
+
+  /* Pricing */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .price-big {
+    font-size: 44px;
+  }
+
+  .combo-ebooks img {
+    height: 48px;
+  }
+
+  .combo-badge {
+    font-size: 10px;
+    padding: 2px 10px;
+  }
+
+  /* Ingredients single col */
+  .ingredients-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .ingredients-grid .ingredient-card {
+    max-width: 360px;
+    margin: 0 auto;
+    padding: 16px 12px;
+  }
+
+  .ingredient-card h3 {
+    font-size: 19px;
+  }
+
+  .ingredient-latin {
+    font-size: 13px;
+  }
+
+  .ingredient-card p {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .ingredients-section .section-header h2 {
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  /* Benefits 2-col */
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Bonuses single col */
+  .bonuses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* VSL offer headline */
+  .vsl-offer-headline h3 {
+    font-size: 18px;
+  }
+  .vsl-countdown .stopwatch {
+    font-size: 22px;
+  }
+
+  /* References single column */
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Button full-width */
+  .btn-primary {
+    width: 100%;
+    padding: 16px 20px;
+    font-size: 18px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 16px;
+    padding: 15px 45px 15px 15px;
+  }
+
+  /* Guarantee */
+  .guarantee-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .guarantee-copy {
+    text-align: center;
+  }
+
+  .guarantee-title {
+    font-size: 30px;
+  }
+
+  .guarantee-badge-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* Product intro */
+  .product-intro-section {
+    padding: 40px 0;
+  }
+
+  .product-intro-name {
+    font-size: 36px;
+  }
+
+  .product-intro-lead {
+    font-size: 18px;
+  }
+
+  /* Shipping strip */
+  .shipping-strip-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .shipping-strip-text {
+    text-align: center;
+  }
+
+  .shipping-strip h3 {
+    font-size: 22px;
+  }
+
+  /* About section */
+
+  .about-block,
+  .about-block--media-left {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .about-block--media-left .about-block__media { order: 0; }
+  .about-block--media-left .about-block__body  { order: 1; }
+
+  .about-block__media {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .about-block__media img {
+    max-height: 360px;
+  }
+
+  .about-header h2 {
+    font-size: 28px;
+  }
+
+  .about-content h3 {
+    font-size: 22px;
+  }
+
+  .quote-callout {
+    font-size: 17px;
+  }
+
+  /* Claim strip */
+  .claim-strip {
+    padding: 26px 0 20px;
+  }
+
+  .claim-strip-heading {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .claim-strip-sub {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  /* Footer */
+  .footer-links {
+    gap: 12px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 24px;
+  }
+
+  /* Section padding reduction */
+  .pricing-section,
+  .bonuses-section,
+  .ingredients-section,
+  .benefits-section,
+  .testimonials-section,
+  .faq-section {
+    padding: 40px 0;
+  }
+
+  /* Section header */
+  .section-header h2 {
+    font-size: 30px;
+  }
+}
+
+/* ==========================================================================
+   MAX-WIDTH: 479px (Mobile portrait)
+   ========================================================================== */
+
+@media (max-width: 479px) {
+
+  /* Hide/show utilities */
+  .hide-479 {
+    display: none !important;
+  }
+
+  .show-479 {
+    display: block !important;
+  }
+
+  /* Hero */
+  .hero-heading h1 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
+  .hero-subheading {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .hero-card-header {
+    font-size: 22px;
+  }
+
+  /* Benefits single column */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* FAQ small */
+  .faq-left h2 {
+    font-size: 24px;
+  }
+
+  .faq-bottle {
+    max-width: 180px;
+  }
+
+  .faq-seal {
+    width: 90px;
+  }
+
+  .combo-ebooks img {
+    height: 40px;
+  }
+
+  .combo-badge {
+    font-size: 9px;
+    padding: 2px 8px;
+  }
+
+  /* Price */
+  .price-big {
+    font-size: 40px;
+  }
+
+  /* FAQ */
+  .faq-question {
+    font-size: 15px;
+    padding: 14px 40px 14px 14px;
+  }
+
+  .faq-toggle {
+    font-size: 20px;
+  }
+
+  /* Testimonial */
+  .testimonials-section h2 {
+    font-size: 26px;
+  }
+
+  .testi-card {
+    padding: 24px 16px;
+  }
+
+  .testi-photo {
+    width: 110px;
+    margin: 0 -4px 8px 14px;
+  }
+
+  .testi-title {
+    font-size: 20px;
+  }
+
+  .testi-quote {
+    font-size: 17px;
+  }
+
+  .testi-polaroids {
+    gap: 10px;
+  }
+
+  .testi-polaroids .polaroid {
+    width: 105px;
+    height: 120px;
+    padding: 5px 5px 10px;
+  }
+
+  .testi-photo {
+    width: 95px;
+  }
+
+  .testimonial-quote {
+    font-size: 15px;
+    line-height: 24px;
+  }
+
+  /* Hero testimonial boxes */
+  .hero-testimonial-box p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  /* Product intro */
+  .product-intro-name {
+    font-size: 28px;
+  }
+
+  .product-intro-text p {
+    font-size: 16px;
+    line-height: 26px;
+  }
+
+  .product-intro-bottle {
+    width: 220px;
+    margin-top: 32px;
+  }
+
+  .product-intro-seal {
+    width: 90px;
+    top: 6px;
+    left: -8px;
+  }
+
+  .product-intro-section {
+    padding: 48px 0 56px;
+  }
+
+  .product-intro-section::after {
+    width: 280px;
+    height: 280px;
+    right: -100px;
+    filter: blur(30px);
+  }
+
+  .product-intro-lead {
+    font-size: 14px;
+    letter-spacing: 0.8px;
+  }
+
+  /* Ingredient cards */
+  .ingredient-img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Section padding further reduction */
+  .pricing-section,
+  .bonuses-section,
+  .ingredients-section,
+  .benefits-section,
+  .testimonials-section,
+  .faq-section {
+    padding: 30px 0;
+  }
+
+  /* Guarantee */
+  .guarantee-title {
+    font-size: 26px;
+  }
+
+  .guarantee-badge-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .guarantee-copy {
+    font-size: 16px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 30px 0;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 22px;
+  }
+
+  /* Section header */
+  .section-header h2 {
+    font-size: 26px;
+  }
+}

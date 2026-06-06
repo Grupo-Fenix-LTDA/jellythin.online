@@ -1,0 +1,95 @@
+/* ==========================================================================
+   JoinTrix - Base Reset, Typography & Utilities
+   ========================================================================== */
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---- Body ---- */
+body {
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* ---- Container ---- */
+.container {
+  width: var(--container-width);
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+/* ---- Padding Utility ---- */
+.bdinpad {
+  padding: 0 68px;
+}
+
+/* ---- Overflow Utility ---- */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* ---- Gradient Text Highlight ---- */
+.highlight {
+  background: var(--gradient-highlight);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Hide/Show Utilities ---- */
+.show-1030,
+.show-767,
+.show-479 {
+  display: none;
+}
+
+.hide-1030,
+.hide-767,
+.hide-479 {
+  /* default visible - actual display value set by each element's own CSS */
+}
