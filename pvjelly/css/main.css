@@ -1,0 +1,311 @@
+/* =========================================================================
+   Presell — restyle inspired by JellyThin DTC brand
+   red #AD182B · rose #CC2B4D · light pink #FFE4DF · pink-soft #FFF3F0 · mauve #BB528C
+   ========================================================================= */
+:root {
+  --red: #AD182B;
+  --rose: #CC2B4D;
+  --pink: #FFE4DF;
+  --pink-soft: #FFF3F0;
+  --mauve: #BB528C;
+  --ink: #1A1A1A;
+  --muted: #6b6b6b;
+  --line: #e7e3e1;
+  --white: #fff;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --shadow-sm: 0 1px 2px rgba(26, 26, 26, .06);
+  --shadow: 0 6px 24px rgba(26, 26, 26, .08);
+  --radius: 14px;
+}
+
+@font-face {
+  font-family: Avenir-Book;
+  src: url("../fonts/AvenirLTStd-Book.otf") format("opentype");
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 14px;
+  background-color: var(--pink-soft);
+  font-family: var(--font);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+.clearfix:after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+/* ---- Headings ---- */
+h1 {
+  text-align: center;
+  font-family: var(--font);
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  color: var(--ink);
+  margin: 0 0 22px 0;
+  padding: 0;
+}
+
+h2 {
+  font-family: var(--font);
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -.4px;
+  color: var(--ink);
+  margin: 0 0 18px 0;
+  padding: 0;
+}
+
+/* ---- Card containers ---- */
+header,
+.content {
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  width: 100%;
+  max-width: 800px;
+  padding: 16px 18px;
+  margin: 0 auto 14px auto;
+  position: relative;
+  border-radius: var(--radius);
+}
+
+header {
+  border-top: 4px solid var(--red);
+}
+
+.content {
+  padding: 38px 30px;
+  font-family: var(--font);
+  font-size: 17px;
+  line-height: 1.7;
+  color: #3a3a3a;
+  margin-bottom: 22px;
+}
+
+.content p {
+  margin: 0 0 18px 0;
+}
+
+.content strong,
+.content b {
+  color: var(--ink);
+}
+
+/* ---- Footer ---- */
+footer {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 14px auto;
+  padding: 24px 18px 0 18px;
+  font-family: var(--font);
+  font-size: 12px;
+  color: var(--muted);
+  text-align: center;
+}
+
+footer span {
+  font-family: var(--font);
+  font-size: 13px;
+  color: #AFAFAF;
+}
+
+footer span a {
+  color: #AFAFAF;
+  text-decoration: none;
+}
+
+footer span a:hover {
+  text-decoration: underline;
+}
+
+.m-show {
+  display: none;
+}
+
+/* ---- Header author row ---- */
+.thumb {
+  float: left;
+  width: 50px;
+  height: 50px;
+  margin-right: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--pink);
+  object-fit: cover;
+}
+
+.main {
+  display: block;
+  width: 100%;
+  margin-bottom: 30px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.name {
+  font-family: var(--font);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--red);
+  display: block;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.stat {
+  font-family: var(--font);
+  font-size: 13px;
+  color: var(--muted);
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.stat i {
+  color: var(--mauve);
+}
+
+.advertorial {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  text-align: right;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--mauve);
+}
+
+.advertorial img {
+  display: inline-block;
+}
+
+/* ---- CTA buttons (JellyThin 3D style) ---- */
+.button {
+  background: var(--red);
+  box-shadow: 0 5px 0 #7d1020;
+  font-family: var(--font);
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: .4px;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 18px 60px;
+  display: table;
+  margin: 0 auto;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: background .2s, transform .12s, box-shadow .12s;
+}
+
+.button:hover {
+  background: var(--rose);
+}
+
+.button:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 #7d1020;
+}
+
+.watch-now-btn {
+  text-align: center;
+  margin: 24px 0;
+}
+
+/* ---- Misc ---- */
+#fda {
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+#fda a {
+  color: var(--red);
+}
+
+#adver p {
+  text-align: center;
+  margin: 0;
+  padding: 0 0 15px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* =========================================================================
+   Responsive
+   ========================================================================= */
+@media screen and (max-width: 500px) {
+  body {
+    padding: 0;
+  }
+
+  header,
+  .content,
+  footer {
+    border-radius: 0;
+  }
+
+  .m-show {
+    display: block;
+  }
+
+  .m-hide {
+    display: none;
+  }
+
+  .advertorial {
+    right: 12px;
+  }
+
+  .name {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .stat.first {
+    padding-right: 15px;
+  }
+
+  h1, h1 a {
+    font-size: 23px !important;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .main {
+    margin-bottom: 14px;
+  }
+
+  .content {
+    padding: 24px 18px;
+    font-size: 15px;
+  }
+
+  footer {
+    font-size: 12px;
+  }
+
+  .button {
+    padding: 14px 40px;
+    font-size: 18px;
+  }
+}
